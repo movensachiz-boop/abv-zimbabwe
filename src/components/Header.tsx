@@ -20,8 +20,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">ABV</span>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" 
+                alt="ABV Boards Logo" 
+                className="w-12 h-12 object-contain"
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="font-bold text-xl text-brand-charcoal">ABV Boards</h1>
