@@ -75,15 +75,21 @@ const Footer = () => {
                 Follow us for updates on new stock, cutting tips, and design inspiration.
               </p>
               <div className="flex space-x-3">
-                <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">
-                  <Facebook className="w-4 h-4" />
-                </Button>
-                <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">
-                  <Instagram className="w-4 h-4" />
-                </Button>
-                <Button variant="whatsapp" size="icon">
-                  <MessageCircle className="w-4 h-4" />
-                </Button>
+                <a href="https://facebook.com/abvboards" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">
+                    <Facebook className="w-4 h-4" />
+                  </Button>
+                </a>
+                <a href="https://instagram.com/abvboards" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">
+                    <Instagram className="w-4 h-4" />
+                  </Button>
+                </a>
+                <a href="https://wa.me/263780555268" target="_blank" rel="noopener noreferrer">
+                  <Button variant="whatsapp" size="icon">
+                    <MessageCircle className="w-4 h-4" />
+                  </Button>
+                </a>
               </div>
               <div className="pt-4">
                 <h5 className="font-medium mb-2">Get Updates</h5>

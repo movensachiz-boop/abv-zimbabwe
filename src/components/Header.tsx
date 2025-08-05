@@ -44,14 +44,18 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Button variant="outline" size="sm" className="gap-2">
-              <Phone className="w-4 h-4" />
-              <span>Call</span>
-            </Button>
-            <Button variant="whatsapp" size="sm" className="gap-2">
-              <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp</span>
-            </Button>
+            <a href="tel:+263780555268">
+              <Button variant="outline" size="sm" className="gap-2">
+                <Phone className="w-4 h-4" />
+                <span>Call</span>
+              </Button>
+            </a>
+            <a href="https://wa.me/263780555268" target="_blank" rel="noopener noreferrer">
+              <Button variant="whatsapp" size="sm" className="gap-2">
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,14 +82,18 @@ const Header = () => {
                 </a>
               ))}
               <div className="px-4 pt-4 space-y-2 border-t border-border">
-                <Button variant="outline" className="w-full gap-2">
-                  <Phone className="w-4 h-4" />
-                  <span>Call Now</span>
-                </Button>
-                <Button variant="whatsapp" className="w-full gap-2">
-                  <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp</span>
-                </Button>
+                <a href="tel:+263780555268" className="block">
+                  <Button variant="outline" className="w-full gap-2">
+                    <Phone className="w-4 h-4" />
+                    <span>Call Now</span>
+                  </Button>
+                </a>
+                <a href="https://wa.me/263780555268" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button variant="whatsapp" className="w-full gap-2">
+                    <MessageCircle className="w-4 h-4" />
+                    <span>WhatsApp</span>
+                  </Button>
+                </a>
               </div>
             </nav>
           </div>

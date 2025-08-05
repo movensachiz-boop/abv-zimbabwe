@@ -81,18 +81,24 @@ const HeroSection = () => {
             
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="hero" size="lg" className="gap-2 px-8">
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp Us
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2 px-8 bg-white/10 border-white/30 text-white hover:bg-white hover:text-brand-charcoal">
-                <Phone className="w-5 h-5" />
-                Call Now
-              </Button>
-              <Button variant="charcoal" size="lg" className="gap-2 px-8">
-                <FileText className="w-5 h-5" />
-                Request Quote
-              </Button>
+              <a href="https://wa.me/263780555268?text=Hi%20ABV%20Boards%2C%20I%20would%20like%20to%20get%20a%20quote." target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="lg" className="gap-2 px-8">
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp Us
+                </Button>
+              </a>
+              <a href="tel:+263780555268">
+                <Button variant="outline" size="lg" className="gap-2 px-8 bg-white/10 border-white/30 text-white hover:bg-white hover:text-brand-charcoal">
+                  <Phone className="w-5 h-5" />
+                  Call Now
+                </Button>
+              </a>
+              <a href="https://wa.me/263718456811?text=Hi%20ABV%20Boards%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20my%20project." target="_blank" rel="noopener noreferrer">
+                <Button variant="charcoal" size="lg" className="gap-2 px-8">
+                  <FileText className="w-5 h-5" />
+                  Request Quote
+                </Button>
+              </a>
             </div>
           </div>
         </div>
