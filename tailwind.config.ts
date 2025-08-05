@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// ABV Brand colors
+				brand: {
+					red: 'hsl(var(--brand-red))',
+					'red-light': 'hsl(var(--brand-red-light))',
+					'red-dark': 'hsl(var(--brand-red-dark))',
+					charcoal: 'hsl(var(--brand-charcoal))',
+					'charcoal-light': 'hsl(var(--brand-charcoal-light))',
+					white: 'hsl(var(--brand-white))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
