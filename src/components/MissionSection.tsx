@@ -28,7 +28,7 @@ const MissionSection = () => {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-charcoal mb-4">
             Our Mission
           </h2>
@@ -42,9 +42,13 @@ const MissionSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {strengths.map((strength, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+            <Card 
+              key={index} 
+              className="text-center hover:shadow-lg transition-all duration-300 hover-scale animate-fade-in" 
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-full flex items-center justify-center mx-auto mb-4 hover-scale">
                   <strength.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-brand-charcoal mb-3">
@@ -58,20 +62,20 @@ const MissionSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-brand-red to-brand-red-dark p-8 rounded-xl text-white">
-            <h3 className="text-2xl font-bold mb-4">Why Choose ABV Boards Zimbabwe?</h3>
+        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '800ms' }}>
+          <div className="bg-gradient-to-r from-brand-red to-brand-red-dark p-8 rounded-xl text-white hover-scale transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 animate-fade-in">Why Choose ABV Boards Zimbabwe?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold mb-2">10+</div>
+              <div className="animate-fade-in" style={{ animationDelay: '1000ms' }}>
+                <div className="text-3xl font-bold mb-2 transition-transform duration-300 hover:scale-110">10+</div>
                 <div className="text-white/90">Years Experience</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">500+</div>
+              <div className="animate-fade-in" style={{ animationDelay: '1200ms' }}>
+                <div className="text-3xl font-bold mb-2 transition-transform duration-300 hover:scale-110">500+</div>
                 <div className="text-white/90">Projects Completed</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">24hr</div>
+              <div className="animate-fade-in" style={{ animationDelay: '1400ms' }}>
+                <div className="text-3xl font-bold mb-2 transition-transform duration-300 hover:scale-110">24hr</div>
                 <div className="text-white/90">Quick Turnaround</div>
               </div>
             </div>

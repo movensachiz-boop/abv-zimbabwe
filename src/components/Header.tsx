@@ -20,14 +20,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="w-12 h-12 flex items-center justify-center hover-scale">
               <img 
                 src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" 
                 alt="ABV Boards Logo" 
-                className="w-12 h-12 object-contain"
+                className="w-12 h-12 object-contain transition-transform duration-300 hover:rotate-3"
               />
             </div>
-            <div className="hidden sm:block">
+            <div className="hidden sm:block animate-fade-in">
               <h1 className="font-bold text-xl text-brand-charcoal">ABV Boards</h1>
               <p className="text-xs text-muted-foreground -mt-1">Zimbabwe</p>
             </div>
@@ -35,11 +35,12 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            {navigationItems.map((item) => (
+            {navigationItems.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-brand-red transition-colors font-medium"
+                className="story-link text-foreground hover:text-brand-red transition-all duration-300 font-medium transform hover:scale-105"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {item.name}
               </a>
@@ -47,15 +48,15 @@ const Header = () => {
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-3 animate-fade-in">
             <a href="tel:+263780555268">
-              <Button variant="outline" size="sm" className="gap-2">
+              <Button variant="outline" size="sm" className="gap-2 hover-scale">
                 <Phone className="w-4 h-4" />
                 <span>Call</span>
               </Button>
             </a>
             <a href="https://wa.me/263780555268" target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="sm" className="gap-2">
+              <Button variant="whatsapp" size="sm" className="gap-2 hover-scale">
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp</span>
               </Button>

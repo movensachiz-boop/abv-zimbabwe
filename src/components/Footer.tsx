@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-12 h-12 flex items-center justify-center">
+            <div className="flex items-center space-x-2 mb-4 animate-fade-in">
+              <div className="w-12 h-12 flex items-center justify-center hover-scale">
                 <img 
                   src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" 
                   alt="ABV Boards Logo" 
@@ -21,24 +21,24 @@ const Footer = () => {
                 <p className="text-sm text-white/70">Zimbabwe</p>
               </div>
             </div>
-            <p className="text-white/80 mb-4">
+            <p className="text-white/80 mb-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
               "Cutting Through with Precision and Style"
             </p>
-            <p className="text-white/70 text-sm">
+            <p className="text-white/70 text-sm animate-fade-in" style={{ animationDelay: '400ms' }}>
               Your trusted partner for premium boards, precision cutting, and complete hardware solutions in Zimbabwe.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="/" className="text-white/70 hover:text-brand-red transition-colors">Home</a></li>
-              <li><a href="/products" className="text-white/70 hover:text-brand-red transition-colors">Our Products</a></li>
-              <li><a href="/services" className="text-white/70 hover:text-brand-red transition-colors">Cutting Services</a></li>
-              <li><a href="/project-files" className="text-white/70 hover:text-brand-red transition-colors">Project Files</a></li>
-              <li><a href="/quote" className="text-white/70 hover:text-brand-red transition-colors">Request Quote</a></li>
-              <li><a href="/contact" className="text-white/70 hover:text-brand-red transition-colors">Contact Us</a></li>
+              <li><a href="/" className="story-link text-white/70 hover:text-brand-red transition-colors">Home</a></li>
+              <li><a href="/products" className="story-link text-white/70 hover:text-brand-red transition-colors">Our Products</a></li>
+              <li><a href="/services" className="story-link text-white/70 hover:text-brand-red transition-colors">Cutting Services</a></li>
+              <li><a href="/project-files" className="story-link text-white/70 hover:text-brand-red transition-colors">Project Files</a></li>
+              <li><a href="/quote" className="story-link text-white/70 hover:text-brand-red transition-colors">Request Quote</a></li>
+              <li><a href="/contact" className="story-link text-white/70 hover:text-brand-red transition-colors">Contact Us</a></li>
             </ul>
           </div>
 
@@ -78,19 +78,19 @@ const Footer = () => {
               <p className="text-white/70 text-sm">
                 Follow us for updates on new stock, cutting tips, and design inspiration.
               </p>
-              <div className="flex space-x-3">
+              <div className="flex space-x-3 animate-fade-in" style={{ animationDelay: '600ms' }}>
                 <a href="https://facebook.com/abvboards" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">
+                  <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal hover-scale transition-all duration-300">
                     <Facebook className="w-4 h-4" />
                   </Button>
                 </a>
                 <a href="https://instagram.com/abvboards" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">
+                  <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal hover-scale transition-all duration-300">
                     <Instagram className="w-4 h-4" />
                   </Button>
                 </a>
                 <a href="https://wa.me/263780555268" target="_blank" rel="noopener noreferrer">
-                  <Button variant="whatsapp" size="icon">
+                  <Button variant="whatsapp" size="icon" className="hover-scale transition-all duration-300">
                     <MessageCircle className="w-4 h-4" />
                   </Button>
                 </a>
