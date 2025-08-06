@@ -4,24 +4,35 @@ import { ChevronLeft, ChevronRight, MessageCircle, Phone, FileText } from "lucid
 import heroCuttingWorkshop from "@/assets/hero-cutting-workshop.jpg";
 import boardsStack from "@/assets/boards-stack.jpg";
 import finishedFurniture from "@/assets/finished-furniture.jpg";
+import workshopVideo from "@/assets/workshop-video.mp4";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
+      type: "video",
+      source: "/workshop-video.mp4", // Add your workshop video here
+      title: "Watch Our Precision Cutting in Action",
+      subtitle: "See our cutting machines and expert craftsmanship in real-time",
+      cta: "Our Services"
+    },
+    {
+      type: "image",
       image: heroCuttingWorkshop,
       title: "Precision Cutting & Expert Craftsmanship",
       subtitle: "Professional cutting machines and edge banding services for perfect results",
       cta: "Our Services"
     },
     {
+      type: "image",
       image: boardsStack,
       title: "Premium Quality Boards & Materials",
       subtitle: "PVC, Melamine, Chipboard, and Quartz countertops in stock",
       cta: "View Products"
     },
     {
+      type: "image",
       image: finishedFurniture,
       title: "Complete Hardware Solutions",
       subtitle: "From boards to hinges - everything you need for furniture projects",
@@ -55,11 +66,24 @@ const HeroSection = () => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
+            {slide.type === "video" ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src={slide.source} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+            )}
             <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
