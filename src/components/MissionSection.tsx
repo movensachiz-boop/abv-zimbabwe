@@ -6,7 +6,7 @@ const MissionSection = () => {
     {
       icon: Target,
       title: "Precision Cutting",
-      description: "State-of-the-art CNC machines ensure perfect cuts every time"
+      description: "State-of-the-art cutting machines ensure perfect cuts every time"
     },
     {
       icon: Award,

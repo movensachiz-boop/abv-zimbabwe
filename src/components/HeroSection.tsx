@@ -12,7 +12,7 @@ const HeroSection = () => {
     {
       image: heroCuttingWorkshop,
       title: "Precision Cutting & Expert Craftsmanship",
-      subtitle: "Professional CNC cutting and edge banding services for perfect results",
+      subtitle: "Professional cutting machines and edge banding services for perfect results",
       cta: "Our Services"
     },
     {
