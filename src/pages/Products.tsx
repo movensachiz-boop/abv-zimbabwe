@@ -3,6 +3,12 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle } from "lucide-react";
+import plywoodImage from "@/assets/plywood-boards.jpg";
+import mdfImage from "@/assets/mdf-boards.jpg";
+import particleboardImage from "@/assets/particleboard.jpg";
+import hardboardImage from "@/assets/hardboard.jpg";
+import osbImage from "@/assets/osb-boards.jpg";
+import chipboardImage from "@/assets/chipboard.jpg";
 
 const Products = () => {
   const boardTypes = [
@@ -19,7 +25,7 @@ const Products = () => {
       ],
       uses: "Furniture, cabinets, flooring, construction, crafts",
       sizes: "4x8 ft, 5x10 ft, custom sizes available",
-      image: "/src/assets/boards-stack.jpg"
+      image: plywoodImage
     },
     {
       name: "MDF (Medium Density Fiberboard)",
@@ -34,7 +40,7 @@ const Products = () => {
       ],
       uses: "Cabinet doors, moldings, trim work, painted furniture",
       sizes: "4x8 ft, 4x10 ft, various thicknesses",
-      image: "/src/assets/finished-furniture.jpg"
+      image: mdfImage
     },
     {
       name: "Particleboard",
@@ -49,7 +55,7 @@ const Products = () => {
       ],
       uses: "Shelving, basic furniture, underlayment, construction",
       sizes: "4x8 ft, 5x8 ft, custom cutting available",
-      image: "/src/assets/boards-stack.jpg"
+      image: particleboardImage
     },
     {
       name: "Hardboard",
@@ -64,7 +70,7 @@ const Products = () => {
       ],
       uses: "Cabinet backs, drawer bottoms, templates, crafts",
       sizes: "4x8 ft, 4x4 ft, various thicknesses from 1/8\" to 1/4\"",
-      image: "/src/assets/finished-furniture.jpg"
+      image: hardboardImage
     },
     {
       name: "OSB (Oriented Strand Board)",
@@ -79,7 +85,7 @@ const Products = () => {
       ],
       uses: "Roof decking, wall sheathing, subflooring, construction",
       sizes: "4x8 ft, 4x9 ft, 4x10 ft, various thicknesses",
-      image: "/src/assets/boards-stack.jpg"
+      image: osbImage
     },
     {
       name: "Chipboard",
@@ -94,7 +100,7 @@ const Products = () => {
       ],
       uses: "Temporary shelving, craft projects, packaging, underlayment",
       sizes: "4x8 ft, custom sizes on request",
-      image: "/src/assets/boards-stack.jpg"
+      image: chipboardImage
     }
   ];
 
@@ -122,7 +128,16 @@ const Products = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {boardTypes.map((board, index) => (
-              <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300">
+              <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                {/* Product Image */}
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={board.image} 
+                    alt={board.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline" className="mb-2">
