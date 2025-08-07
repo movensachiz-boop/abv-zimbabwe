@@ -11,6 +11,7 @@ const Header = () => {
     { name: "Services", href: "/services" },
     { name: "Project Files", href: "/project-files" },
     { name: "Quote Request", href: "/quote" },
+    { name: "Location", href: "https://maps.app.goo.gl/BfxoaK6f8RcztNcm6", external: true },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -41,6 +42,7 @@ const Header = () => {
                 href={item.href}
                 className="story-link text-foreground hover:text-brand-red transition-all duration-300 font-medium transform hover:scale-105"
                 style={{ animationDelay: `${index * 100}ms` }}
+                {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
               >
                 {item.name}
               </a>
@@ -82,6 +84,7 @@ const Header = () => {
                   href={item.href}
                   className="block px-4 py-2 text-foreground hover:text-brand-red hover:bg-muted transition-colors"
                   onClick={() => setIsMenuOpen(false)}
+                  {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
                 >
                   {item.name}
                 </a>
