@@ -3,104 +3,136 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle } from "lucide-react";
-import plywoodImage from "@/assets/plywood-boards.jpg";
-import mdfImage from "@/assets/mdf-boards.jpg";
-import particleboardImage from "@/assets/particleboard.jpg";
-import hardboardImage from "@/assets/hardboard.jpg";
-import osbImage from "@/assets/osb-boards.jpg";
-import chipboardImage from "@/assets/chipboard.jpg";
+import whiteMelamineImage from "@/assets/white-melamine.jpg";
+import stormGrayMatteImage from "@/assets/storm-gray-matte.jpg";
+import stormGrayGlossImage from "@/assets/storm-gray-gloss.jpg";
+import blackMelamineImage from "@/assets/black-melamine.jpg";
+import flutedPanelsImage from "@/assets/fluted-panels.jpg";
+import quartziteSlabsImage from "@/assets/quartzite-slabs.jpg";
+import glassDoorProfilesImage from "@/assets/glass-door-profiles.jpg";
+import brookhillMatteImage from "@/assets/brookhill-matte.jpg";
 
 const Products = () => {
   const boardTypes = [
     {
-      name: "Plywood",
-      category: "Engineered Wood",
-      description: "Versatile engineered wood panels made from thin layers of wood veneer",
+      name: "White Melamine",
+      category: "Premium Finish",
+      description: "Clean white melamine finish perfect for modern kitchen and furniture applications",
       features: [
-        "High strength-to-weight ratio",
-        "Smooth, uniform surface",
-        "Excellent for furniture making",
-        "Available in various thicknesses",
-        "Cost-effective solution"
+        "Scratch and moisture resistant",
+        "Easy to clean and maintain",
+        "Smooth, non-porous surface",
+        "UV resistant finish",
+        "Professional grade quality"
       ],
-      uses: "Furniture, cabinets, flooring, construction, crafts",
-      sizes: "4x8 ft, 5x10 ft, custom sizes available",
-      image: plywoodImage
+      uses: "Kitchen cabinets, office furniture, shelving, wardrobe interiors",
+      sizes: "4x8 ft, 5x8 ft, custom sizes available",
+      image: whiteMelamineImage
     },
     {
-      name: "MDF (Medium Density Fiberboard)",
-      category: "Composite Wood",
-      description: "Dense, smooth composite wood panel perfect for detailed work",
+      name: "Storm Gray Matte",
+      category: "Contemporary Finish",
+      description: "Sophisticated storm gray with matte finish for modern design applications",
       features: [
-        "Ultra-smooth surface finish",
-        "Easy to cut and shape",
-        "Consistent density throughout",
-        "Takes paint and stain exceptionally well",
-        "No grain pattern for uniform appearance"
+        "Anti-fingerprint surface",
+        "Contemporary color palette",
+        "Durable melamine coating",
+        "Consistent color throughout",
+        "Professional appearance"
       ],
-      uses: "Cabinet doors, moldings, trim work, painted furniture",
-      sizes: "4x8 ft, 4x10 ft, various thicknesses",
-      image: mdfImage
-    },
-    {
-      name: "Particleboard",
-      category: "Composite Wood",
-      description: "Economical wood composite made from wood chips and adhesive",
-      features: [
-        "Budget-friendly option",
-        "Good for structural applications",
-        "Uniform composition",
-        "Easy to work with standard tools",
-        "Available in moisture-resistant versions"
-      ],
-      uses: "Shelving, basic furniture, underlayment, construction",
+      uses: "Modern kitchens, commercial furniture, contemporary interiors",
       sizes: "4x8 ft, 5x8 ft, custom cutting available",
-      image: particleboardImage
+      image: stormGrayMatteImage
     },
     {
-      name: "Hardboard",
-      category: "High-Density Fiberboard",
-      description: "Dense, smooth panel ideal for backing and templates",
+      name: "Storm Gray Gloss",
+      category: "High-Gloss Finish",
+      description: "Elegant storm gray with high-gloss finish for premium applications",
       features: [
-        "Very smooth surface",
-        "High density and strength",
-        "Resists warping",
-        "Easy to cut precisely",
-        "Excellent for templates and jigs"
+        "High-gloss reflective surface",
+        "Easy to clean and wipe down",
+        "Premium appearance",
+        "Resistant to staining",
+        "Long-lasting finish"
       ],
-      uses: "Cabinet backs, drawer bottoms, templates, crafts",
-      sizes: "4x8 ft, 4x4 ft, various thicknesses from 1/8\" to 1/4\"",
-      image: hardboardImage
+      uses: "High-end kitchens, display furniture, commercial applications",
+      sizes: "4x8 ft, 5x8 ft, various thicknesses",
+      image: stormGrayGlossImage
     },
     {
-      name: "OSB (Oriented Strand Board)",
-      category: "Structural Wood",
-      description: "Strong structural panel made from oriented wood strands",
+      name: "Black Melamine",
+      category: "Bold Finish",
+      description: "Rich black melamine finish for dramatic and sophisticated designs",
       features: [
-        "High structural strength",
-        "Moisture resistant options available",
-        "Cost-effective for construction",
-        "Good nail and screw holding power",
-        "Environmentally friendly manufacturing"
+        "Deep, consistent black color",
+        "Scratch resistant surface",
+        "Professional grade durability",
+        "Easy maintenance",
+        "Versatile design compatibility"
       ],
-      uses: "Roof decking, wall sheathing, subflooring, construction",
-      sizes: "4x8 ft, 4x9 ft, 4x10 ft, various thicknesses",
-      image: osbImage
+      uses: "Contemporary furniture, accent pieces, commercial interiors",
+      sizes: "4x8 ft, 5x8 ft, custom sizes on request",
+      image: blackMelamineImage
     },
     {
-      name: "Chipboard",
-      category: "Economy Grade",
-      description: "Basic composite board for light-duty applications",
+      name: "Fluted Panel Varieties",
+      category: "Decorative Panels",
+      description: "Stylish fluted panels with vertical grooves for modern architectural design",
       features: [
-        "Most economical option",
-        "Good for temporary projects",
-        "Easy to cut and shape",
-        "Lightweight construction",
-        "Suitable for basic shelving"
+        "Unique textured surface",
+        "Sound absorption properties",
+        "Multiple wood grain options",
+        "Easy installation system",
+        "Architectural grade quality"
       ],
-      uses: "Temporary shelving, craft projects, packaging, underlayment",
-      sizes: "4x8 ft, custom sizes on request",
-      image: chipboardImage
+      uses: "Feature walls, retail displays, office partitions, acoustic panels",
+      sizes: "4x8 ft, 4x10 ft, custom profiles available",
+      image: flutedPanelsImage
+    },
+    {
+      name: "Quartzite Slabs and Strips",
+      category: "Natural Stone",
+      description: "Premium quartzite surfaces with natural stone beauty and durability",
+      features: [
+        "Natural stone durability",
+        "Heat and scratch resistant",
+        "Unique veining patterns",
+        "Low maintenance surface",
+        "Premium luxury appearance"
+      ],
+      uses: "Countertops, backsplashes, feature walls, commercial surfaces",
+      sizes: "Full slabs, custom strips, edge profiles available",
+      image: quartziteSlabsImage
+    },
+    {
+      name: "Glass Door Profiles",
+      category: "Modern Hardware",
+      description: "Contemporary glass door systems with aluminum profiles for cabinet applications",
+      features: [
+        "Crystal clear glass options",
+        "Frosted and textured varieties",
+        "Aluminum frame construction",
+        "Soft-close mechanisms available",
+        "Modern aesthetic appeal"
+      ],
+      uses: "Cabinet doors, display cases, office furniture, retail fixtures",
+      sizes: "Standard cabinet sizes, custom dimensions available",
+      image: glassDoorProfilesImage
+    },
+    {
+      name: "Brookhill Matte Melamine",
+      category: "Wood Grain Finish",
+      description: "Natural wood grain melamine with matte finish for authentic wood appearance",
+      features: [
+        "Realistic wood grain texture",
+        "Matte finish reduces glare",
+        "Consistent grain pattern",
+        "Maintenance-free surface",
+        "Cost-effective wood alternative"
+      ],
+      uses: "Traditional furniture, cabinetry, office applications, residential projects",
+      sizes: "4x8 ft, 5x8 ft, matching edge banding available",
+      image: brookhillMatteImage
     }
   ];
 
