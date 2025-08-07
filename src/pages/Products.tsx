@@ -30,9 +30,9 @@ const Products = () => {
       image: whiteMelamineImage
     },
     {
-      name: "Storm Gray Matte",
+      name: "Storm Grey Matte",
       category: "Contemporary Finish",
-      description: "Sophisticated storm gray with matte finish for modern design applications",
+      description: "Sophisticated storm grey with matte finish for modern design applications",
       features: [
         "Anti-fingerprint surface",
         "Contemporary color palette",
@@ -45,9 +45,9 @@ const Products = () => {
       image: stormGrayMatteImage
     },
     {
-      name: "Storm Gray Gloss",
+      name: "Storm Grey Gloss",
       category: "High-Gloss Finish",
-      description: "Elegant storm gray with high-gloss finish for premium applications",
+      description: "Elegant storm grey with high-gloss finish for premium applications",
       features: [
         "High-gloss reflective surface",
         "Easy to clean and wipe down",
