@@ -55,7 +55,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-brand-red" />
-                <p className="text-white/80">+263 123 456 789</p>
+                <p className="text-white/80">0780555268 // 0718456811</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-brand-red" />
@@ -79,7 +79,7 @@ const Footer = () => {
                 Follow us for updates on new stock, cutting tips, and design inspiration.
               </p>
               <div className="flex space-x-3 animate-fade-in" style={{ animationDelay: '600ms' }}>
-                <a href="https://facebook.com/abvboards" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61560574889757" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal hover-scale transition-all duration-300">
                     <Facebook className="w-4 h-4" />
                   </Button>

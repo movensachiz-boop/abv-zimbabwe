@@ -51,7 +51,7 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-3 animate-fade-in">
-            <a href="tel:+263780555268">
+            <a href="tel:0780555268">
               <Button variant="outline" size="sm" className="gap-2 hover-scale">
                 <Phone className="w-4 h-4" />
                 <span>Call</span>
@@ -90,7 +90,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="px-4 pt-4 space-y-2 border-t border-border">
-                <a href="tel:+263780555268" className="block">
+                <a href="tel:0780555268" className="block">
                   <Button variant="outline" className="w-full gap-2">
                     <Phone className="w-4 h-4" />
                     <span>Call Now</span>
