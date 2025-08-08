@@ -50,7 +50,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-brand-red mt-0.5" />
                 <div>
                   <p className="text-white/80">Gweru, Zimbabwe</p>
-                  <p className="text-white/60 text-sm">Industrial Area</p>
+                  <p className="text-white/60 text-sm">SHAMROCK PARK UNIT 10</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
