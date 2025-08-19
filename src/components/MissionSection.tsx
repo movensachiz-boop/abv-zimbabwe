@@ -50,12 +50,12 @@ const MissionSection = () => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-full flex items-center justify-center mx-auto mb-4 hover-scale overflow-hidden">
+                <div className="w-24 h-24 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-lg flex items-center justify-center mx-auto mb-4 hover-scale overflow-hidden">
                   {strength.image ? (
                     <img 
                       src={strength.image} 
                       alt={strength.title}
-                      className="w-full h-full object-cover rounded-full"
+                      className="w-full h-full object-cover rounded-lg"
                     />
                   ) : (
                     <strength.icon className="w-8 h-8 text-white" />
