@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, FileText } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import heroImage from "@/assets/hero-cutting-workshop.jpg";
+const heroImage = "/lovable-uploads/ef680d7f-4384-4331-a47e-5c383504e95a.png";
 import boardsStack from "@/assets/boards-stack.jpg";
 import cuttingMachine from "@/assets/board-cutting-machine.jpg";
 import finishedFurniture from "@/assets/finished-furniture.jpg";
