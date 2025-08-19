@@ -41,7 +41,21 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          
+          <nav className="hidden lg:flex items-center space-x-8 animate-fade-in">
+            {navigationItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-foreground hover:text-brand-red font-medium transition-colors duration-200 hover-scale"
+                {...(item.external && {
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                })}
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-3 animate-fade-in">
