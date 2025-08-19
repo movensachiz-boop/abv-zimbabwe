@@ -5,7 +5,11 @@ import { useEffect, useState } from "react";
 
 const heroImages = [
   "/lovable-uploads/ef680d7f-4384-4331-a47e-5c383504e95a.png",
-  "/lovable-uploads/a79ca269-b3da-4a13-90b3-c3f98b6fcc63.png"
+  "/lovable-uploads/a79ca269-b3da-4a13-90b3-c3f98b6fcc63.png",
+  "/lovable-uploads/a53ccc0d-fc4f-4dc9-a909-67a2371e0cdd.png",
+  "/lovable-uploads/824d4f06-7ad3-4932-85d5-2ae89c1ed7fa.png",
+  "/lovable-uploads/081f61aa-2059-49e2-9afb-6526f27715b4.png",
+  "/lovable-uploads/048f881f-2feb-4129-ae36-c6f8f8be4a37.png"
 ];
 import boardsStack from "@/assets/boards-stack.jpg";
 import cuttingMachine from "@/assets/board-cutting-machine.jpg";
