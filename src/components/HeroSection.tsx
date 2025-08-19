@@ -65,9 +65,7 @@ const HeroSection = () => {
             }}>
                 <CarouselContent className="-ml-2 md:-ml-4">
                   {projectAssets.map((asset, index) => <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
-                      <div className="group relative aspect-square rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 hover-scale transition-all duration-300">
-                        
-                      </div>
+                      
                     </CarouselItem>)}
                 </CarouselContent>
                 <CarouselPrevious className="bg-white/20 border-white/30 text-white hover:bg-white/30 hover:text-white" />
