@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, FileText } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import heroImage from "@/assets/hero-cutting-workshop.jpg";
 import boardsStack from "@/assets/boards-stack.jpg";
 import cuttingMachine from "@/assets/board-cutting-machine.jpg";
@@ -55,15 +62,32 @@ const HeroSection = () => {
             </p>
             
             {/* Project Assets Showcase */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8 max-w-4xl mx-auto animate-fade-in" style={{
+            <div className="mb-8 max-w-4xl mx-auto animate-fade-in" style={{
             animationDelay: '600ms'
           }}>
-              {projectAssets.map((asset, index) => <div key={index} className="group relative aspect-square rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 hover-scale transition-all duration-300" style={{
-              animationDelay: asset.delay
-            }}>
-                  <img src={asset.image} alt={asset.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                  
-                </div>)}
+              <Carousel
+                className="w-full"
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {projectAssets.map((asset, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
+                      <div className="group relative aspect-square rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 hover-scale transition-all duration-300">
+                        <img 
+                          src={asset.image} 
+                          alt={asset.title} 
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="bg-white/20 border-white/30 text-white hover:bg-white/30 hover:text-white" />
+                <CarouselNext className="bg-white/20 border-white/30 text-white hover:bg-white/30 hover:text-white" />
+              </Carousel>
             </div>
             
             {/* Action Buttons */}
