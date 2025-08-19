@@ -8,7 +8,7 @@ import stormGrayMatteImage from "@/assets/storm-gray-matte.jpg";
 import stormGrayGlossImage from "@/assets/storm-gray-gloss.jpg";
 import blackMelamineImage from "@/assets/black-melamine.jpg";
 import flutedPanelsImage from "@/assets/fluted-panels.jpg";
-import quartziteSlabsImage from "@/assets/quartzite-slabs.jpg";
+import quartziteSlabsImage from "/lovable-uploads/797e6711-6720-4b64-a77f-af4d6f339739.png";
 import glassDoorProfilesImage from "@/assets/glass-door-profiles.jpg";
 import brookhillMatteImage from "@/assets/brookhill-matte.jpg";
 const Products = () => {
