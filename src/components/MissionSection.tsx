@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, Users, Zap } from "lucide-react";
 import precisionCuttingImage from "/lovable-uploads/7b09093b-8966-4d09-8031-9cb3cc0035f0.png";
 
 const MissionSection = () => {
@@ -23,7 +22,8 @@ const MissionSection = () => {
       description: "Experienced team dedicated to bringing your vision to life"
     },
     {
-      icon: Zap,
+      icon: null,
+      image: "/lovable-uploads/f2e53b21-963e-4eac-a694-6ce5944c2f4d.png",
       title: "Fast Turnaround",
       description: "Quick processing and delivery to keep your projects on schedule"
     }
@@ -53,15 +53,11 @@ const MissionSection = () => {
             >
               <CardContent className="p-6">
                 <div className="w-24 h-24 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-lg flex items-center justify-center mx-auto mb-4 hover-scale overflow-hidden">
-                  {strength.image ? (
-                    <img 
-                      src={strength.image} 
-                      alt={strength.title}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  ) : (
-                    <strength.icon className="w-8 h-8 text-white" />
-                  )}
+                  <img 
+                    src={strength.image} 
+                    alt={strength.title}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-brand-charcoal mb-3">
                   {strength.title}
