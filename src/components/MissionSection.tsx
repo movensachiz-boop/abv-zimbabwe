@@ -17,7 +17,8 @@ const MissionSection = () => {
       description: "Only premium PVC, melamine, and hardware from trusted suppliers"
     },
     {
-      icon: Users,
+      icon: null,
+      image: "/lovable-uploads/ec17cf19-e928-4b7d-929d-6c3facc7f63f.png",
       title: "Expert Service",
       description: "Experienced team dedicated to bringing your vision to life"
     },
