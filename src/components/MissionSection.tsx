@@ -1,10 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Award, Users, Zap } from "lucide-react";
+import { Award, Users, Zap } from "lucide-react";
+import precisionCuttingImage from "/lovable-uploads/7b09093b-8966-4d09-8031-9cb3cc0035f0.png";
 
 const MissionSection = () => {
   const strengths = [
     {
-      icon: Target,
+      icon: null,
+      image: precisionCuttingImage,
       title: "Precision Cutting",
       description: "State-of-the-art cutting machines ensure perfect cuts every time"
     },
@@ -48,8 +50,16 @@ const MissionSection = () => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-full flex items-center justify-center mx-auto mb-4 hover-scale">
-                  <strength.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-full flex items-center justify-center mx-auto mb-4 hover-scale overflow-hidden">
+                  {strength.image ? (
+                    <img 
+                      src={strength.image} 
+                      alt={strength.title}
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  ) : (
+                    <strength.icon className="w-8 h-8 text-white" />
+                  )}
                 </div>
                 <h3 className="text-xl font-semibold text-brand-charcoal mb-3">
                   {strength.title}
