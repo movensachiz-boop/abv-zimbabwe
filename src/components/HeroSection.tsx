@@ -1,13 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, FileText } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-const heroImage = "/lovable-uploads/ef680d7f-4384-4331-a47e-5c383504e95a.png";
+import { useEffect, useState } from "react";
+
+const heroImages = [
+  "/lovable-uploads/ef680d7f-4384-4331-a47e-5c383504e95a.png",
+  "/lovable-uploads/a79ca269-b3da-4a13-90b3-c3f98b6fcc63.png"
+];
 import boardsStack from "@/assets/boards-stack.jpg";
 import cuttingMachine from "@/assets/board-cutting-machine.jpg";
 import finishedFurniture from "@/assets/finished-furniture.jpg";
 import mdfBoards from "@/assets/mdf-boards.jpg";
 import plywoodBoards from "@/assets/plywood-boards.jpg";
 const HeroSection = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const projectAssets = [{
     image: boardsStack,
     title: "Premium Board Stack",
@@ -29,13 +44,22 @@ const HeroSection = () => {
     title: "Plywood Boards",
     delay: "800ms"
   }];
+
   return <section className="relative h-[600px] md:h-[700px] overflow-hidden">
-      {/* Hero Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroImage})`
-    }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-charcoal/80 to-brand-charcoal-dark/90" />
-      </div>
+      {/* Hero Background Images with Sliding Effect */}
+      {heroImages.map((image, index) => (
+        <div 
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `url(${image})`
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-charcoal/80 to-brand-charcoal-dark/90" />
+        </div>
+      ))}
       
       {/* Content */}
       <div className="relative flex items-center justify-center h-full">
