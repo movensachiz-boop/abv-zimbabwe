@@ -11,7 +11,8 @@ const MissionSection = () => {
       description: "State-of-the-art cutting machines ensure perfect cuts every time"
     },
     {
-      icon: Award,
+      icon: null,
+      image: "/lovable-uploads/ad7865e0-31da-43d3-a194-30c83634b09c.png",
       title: "Quality Materials",
       description: "Only premium PVC, melamine, and hardware from trusted suppliers"
     },
