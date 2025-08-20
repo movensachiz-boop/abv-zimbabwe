@@ -21,7 +21,7 @@ const Header = () => {
     external: true
   }, {
     name: "Contact",
-    href: "/contact"
+    href: "tel:+263780555268"
   }];
   return <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
