@@ -26,20 +26,38 @@ const Quote = () => {
   const onSubmit = async (data: QuoteFormData) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Format the quote request message for WhatsApp
+      const message = `*QUOTE REQUEST - ABV BOARDS*
+
+*Customer Details:*
+Name: ${data.name} ${data.surname}
+Phone: ${data.phone}
+Address: ${data.address}
+
+*Project Details:*
+${data.projectDetails || 'No additional details provided'}
+
+*Request Date:* ${new Date().toLocaleDateString()}
+
+Please provide a quote for the above requirements. Thank you!`;
+
+      // Create WhatsApp URL with the formatted message
+      const whatsappUrl = `https://wa.me/263780555268?text=${encodeURIComponent(message)}`;
+      
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
       
       toast({
-        title: "Quote Request Submitted!",
-        description: "We'll contact you within 24 hours with your personalized quote.",
+        title: "Redirecting to WhatsApp!",
+        description: "Your quote request is ready to send via WhatsApp.",
       });
       
       reset();
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to submit quote request. Please try again.",
+        description: "Failed to prepare quote request. Please try again.",
         variant: "destructive",
       });
     } finally {
