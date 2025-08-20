@@ -53,6 +53,13 @@ const Footer = () => {
                 </div>
               </div>
               
+              <div className="flex items-start space-x-3">
+                <Phone className="w-5 h-5 text-brand-red mt-0.5" />
+                <div>
+                  <p className="text-white/80">+263 780 555 268</p>
+                  <p className="text-white/60 text-sm">WhatsApp Available</p>
+                </div>
+              </div>
               
               <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-brand-red mt-0.5" />
