@@ -53,6 +53,42 @@ export type Database = {
         }
         Relationships: []
       }
+      quote_requests: {
+        Row: {
+          address: string
+          created_at: string
+          id: string
+          name: string
+          phone: string
+          project_details: string | null
+          status: string
+          surname: string
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          id?: string
+          name: string
+          phone: string
+          project_details?: string | null
+          status?: string
+          surname: string
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          id?: string
+          name?: string
+          phone?: string
+          project_details?: string | null
+          status?: string
+          surname?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       sale_items: {
         Row: {
           created_at: string | null
