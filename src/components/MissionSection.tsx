@@ -55,8 +55,13 @@ const MissionSection = () => {
                 <div className="w-24 h-24 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-lg flex items-center justify-center mx-auto mb-4 hover-scale overflow-hidden">
                   <img 
                     src={strength.image} 
-                    alt={strength.title}
+                    alt={`${strength.title} - ABV Boards service`}
                     className="w-full h-full object-cover rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                    width="96"
+                    height="96"
+                    sizes="96px"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-brand-charcoal mb-3">

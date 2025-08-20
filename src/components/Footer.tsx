@@ -12,8 +12,13 @@ const Footer = () => {
               <div className="w-12 h-12 flex items-center justify-center hover-scale">
                 <img 
                   src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" 
-                  alt="ABV Boards Logo" 
+                  alt="ABV Boards Zimbabwe Logo" 
                   className="w-12 h-12 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                  width="48"
+                  height="48"
+                  sizes="48px"
                 />
               </div>
               <div>

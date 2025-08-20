@@ -54,13 +54,18 @@ const HeroSection = () => {
       {heroImages.map((image, index) => (
         <div 
           key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{
-            backgroundImage: `url(${image})`
-          }}
         >
+          <img
+            src={image}
+            alt={`ABV Boards showcase ${index + 1}`}
+            className="w-full h-full object-cover"
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-charcoal/80 to-brand-charcoal-dark/90" />
         </div>
       ))}

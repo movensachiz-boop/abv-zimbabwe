@@ -29,7 +29,16 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-12 h-12 flex items-center justify-center hover-scale">
-              <img src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" alt="ABV Boards Logo" className="w-12 h-12 object-contain transition-transform duration-300 hover:rotate-3" />
+              <img 
+                src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" 
+                alt="ABV Boards Zimbabwe Logo" 
+                className="w-12 h-12 object-contain transition-transform duration-300 hover:rotate-3"
+                loading="eager"
+                decoding="async"
+                width="48"
+                height="48"
+                sizes="48px"
+              />
             </div>
             <div className="hidden sm:block animate-fade-in">
               <h1 className="font-bold text-xl text-brand-charcoal">ABV Boards</h1>

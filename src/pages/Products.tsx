@@ -102,7 +102,16 @@ const Products = () => {
             {boardTypes.map((board, index) => <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {/* Product Image */}
                 <div className="h-48 overflow-hidden">
-                  <img src={board.image} alt={board.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                  <img 
+                    src={board.image} 
+                    alt={`${board.name} - ${board.category} board from ABV Boards Zimbabwe`} 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="192"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
                 
                 <CardHeader>
