@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Message {
   id: string;
@@ -47,32 +48,30 @@ const ChatBot = () => {
     setIsLoading(true);
 
     try {
-      // Simulate AI response for now - replace with actual Supabase function call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      const responses = [
-        "Thank you for your interest in ABV Boards! We specialize in precision cutting and premium materials. For specific quotes, please contact us via WhatsApp at +263 780 555 268.",
-        "We offer PVC, melamine, chipboard, and quartz countertops with professional edge banding services. What type of project are you working on?",
-        "Our cutting machines ensure perfect precision for all your furniture projects. We can handle orders of any size with a 24-hour turnaround time.",
-        "ABV Boards has been serving Zimbabwe for over 10 years with 500+ completed projects. Contact us on WhatsApp for personalized assistance!",
-        "We stock premium hardware including hinges, handles, and fittings. For detailed product information and pricing, please reach out via WhatsApp at +263 718 456 811."
-      ];
-      
-      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      // Call the chat-bot edge function (security fix - proper integration)
+      const { data, error } = await supabase.functions.invoke('chat-bot', {
+        body: { message: userMessage.content }
+      });
+
+      if (error) {
+        console.error('ChatBot API error:', error);
+        throw error;
+      }
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: randomResponse,
+        content: data?.message || "I'm sorry, I couldn't process your request right now. Please contact us directly via WhatsApp at +263 780 555 268.",
         isBot: true,
         timestamp: new Date(),
       };
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error:', error);
+      console.error('ChatBot error:', error);
+      // Fallback to helpful static response if API fails
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: "I'm experiencing some technical difficulties. Please contact us directly via WhatsApp at +263 780 555 268 for immediate assistance.",
+        content: "I'm experiencing some technical difficulties. Please contact us directly via WhatsApp at +263 780 555 268 for immediate assistance with your ABV Boards inquiry.",
         isBot: true,
         timestamp: new Date(),
       };

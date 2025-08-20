@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, MessageCircle, Mail, FileText } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface QuoteFormData {
   name: string;
@@ -27,6 +28,27 @@ const Quote = () => {
     setIsSubmitting(true);
     
     try {
+      // Save quote request to database first (critical security fix)
+      const { error: dbError } = await supabase
+        .from('quote_requests')
+        .insert({
+          name: data.name,
+          surname: data.surname,
+          phone: data.phone,
+          address: data.address,
+          project_details: data.projectDetails,
+        });
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        toast({
+          title: "Error",
+          description: "There was an error saving your request. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       // Format the quote request message for WhatsApp
       const message = `*QUOTE REQUEST - ABV BOARDS*
 
@@ -49,15 +71,16 @@ Please provide a quote for the above requirements. Thank you!`;
       window.open(whatsappUrl, '_blank');
       
       toast({
-        title: "Redirecting to WhatsApp!",
-        description: "Your quote request is ready to send via WhatsApp.",
+        title: "Quote request saved and sent!",
+        description: "Your request has been saved to our system and you've been redirected to WhatsApp.",
       });
       
       reset();
     } catch (error) {
+      console.error('Unexpected error:', error);
       toast({
         title: "Error",
-        description: "Failed to prepare quote request. Please try again.",
+        description: "Failed to process quote request. Please try again.",
         variant: "destructive",
       });
     } finally {
