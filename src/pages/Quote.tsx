@@ -28,28 +28,7 @@ const Quote = () => {
     setIsSubmitting(true);
     
     try {
-      // Save quote request to database first (critical security fix)
-      const { error: dbError } = await supabase
-        .from('quote_requests')
-        .insert({
-          name: data.name,
-          surname: data.surname,
-          phone: data.phone,
-          address: data.address,
-          project_details: data.projectDetails,
-        });
-
-      if (dbError) {
-        console.error('Database error:', dbError);
-        toast({
-          title: "Error",
-          description: "There was an error saving your request. Please try again.",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      // Format the quote request message for WhatsApp
+      // Format the quote request message for WhatsApp with all form information
       const message = `*QUOTE REQUEST - ABV BOARDS*
 
 *Customer Details:*
@@ -64,23 +43,39 @@ ${data.projectDetails || 'No additional details provided'}
 
 Please provide a quote for the above requirements. Thank you!`;
 
-      // Create WhatsApp URL with the formatted message
+      // Create WhatsApp URL with all the form data
       const whatsappUrl = `https://wa.me/263780555268?text=${encodeURIComponent(message)}`;
       
-      // Open WhatsApp
+      // Open WhatsApp immediately with all the information
       window.open(whatsappUrl, '_blank');
       
+      // Save to database as backup (but don't block WhatsApp if it fails)
+      supabase
+        .from('quote_requests')
+        .insert({
+          name: data.name,
+          surname: data.surname,
+          phone: data.phone,
+          address: data.address,
+          project_details: data.projectDetails,
+        })
+        .then(({ error }) => {
+          if (error) {
+            console.error('Database save error:', error);
+          }
+        });
+      
       toast({
-        title: "Quote request saved and sent!",
-        description: "Your request has been saved to our system and you've been redirected to WhatsApp.",
+        title: "Redirecting to WhatsApp!",
+        description: "Opening WhatsApp with your complete quote request information.",
       });
       
       reset();
     } catch (error) {
-      console.error('Unexpected error:', error);
+      console.error('Error creating WhatsApp message:', error);
       toast({
         title: "Error",
-        description: "Failed to process quote request. Please try again.",
+        description: "Failed to prepare WhatsApp message. Please try again.",
         variant: "destructive",
       });
     } finally {
