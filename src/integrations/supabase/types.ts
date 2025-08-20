@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          is_active: boolean
+          name: string
+          role: Database["public"]["Enums"]["admin_role"]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          is_active?: boolean
+          name: string
+          role?: Database["public"]["Enums"]["admin_role"]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          is_active?: boolean
+          name?: string
+          role?: Database["public"]["Enums"]["admin_role"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
       products: {
         Row: {
           category: string
@@ -178,13 +208,21 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      has_admin_role: {
+        Args: { required_role: Database["public"]["Enums"]["admin_role"] }
+        Returns: boolean
+      }
+      is_admin_user: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
       update_product_stock: {
         Args: { product_id: string; quantity_sold: number }
         Returns: undefined
       }
     }
     Enums: {
-      [_ in never]: never
+      admin_role: "owner" | "manager" | "cashier" | "viewer"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -311,6 +349,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      admin_role: ["owner", "manager", "cashier", "viewer"],
+    },
   },
 } as const
