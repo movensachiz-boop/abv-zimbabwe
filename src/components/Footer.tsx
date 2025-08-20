@@ -110,7 +110,7 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-white/60 text-sm">
             © 2025 ABV Boards Zimbabwe. All rights reserved. | 
-            <span className="text-white/40"> Designed for precision and style</span>
+            <span className="text-white/40"> Your Dream Interior Partner</span>
           </p>
         </div>
       </div>
