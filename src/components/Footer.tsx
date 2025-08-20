@@ -1,41 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, MessageCircle } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-brand-charcoal text-white">
+  return <footer className="bg-brand-charcoal text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4 animate-fade-in">
               <div className="w-12 h-12 flex items-center justify-center hover-scale">
-                <img 
-                  src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" 
-                  alt="ABV Boards Zimbabwe Logo" 
-                  className="w-12 h-12 object-contain"
-                  loading="lazy"
-                  decoding="async"
-                  width="48"
-                  height="48"
-                  sizes="48px"
-                />
+                <img src="/lovable-uploads/0f413cc8-4799-47ec-8c9b-79c0f7325e53.png" alt="ABV Boards Zimbabwe Logo" className="w-12 h-12 object-contain" loading="lazy" decoding="async" width="48" height="48" sizes="48px" />
               </div>
               <div>
                 <h3 className="font-bold text-xl">ABV Boards</h3>
                 <p className="text-sm text-white/70">Zimbabwe</p>
               </div>
             </div>
-            <p className="text-white/80 mb-4 animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <p className="text-white/80 mb-4 animate-fade-in" style={{
+            animationDelay: '200ms'
+          }}>
               "Cutting Through with Precision and Style"
             </p>
-            <p className="text-white/70 text-sm animate-fade-in" style={{ animationDelay: '400ms' }}>
+            <p className="text-white/70 text-sm animate-fade-in" style={{
+            animationDelay: '400ms'
+          }}>
               Your trusted partner for premium boards, precision cutting, and complete hardware solutions in Zimbabwe.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
+          <div className="animate-fade-in" style={{
+          animationDelay: '300ms'
+        }}>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="/" className="story-link text-white/70 hover:text-brand-red transition-colors">Home</a></li>
@@ -68,8 +63,8 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-brand-red mt-0.5" />
                 <div>
-                  <p className="text-white/80">Mon - Fri: 7:30 AM - 5:00 PM</p>
-                  <p className="text-white/80">Sat: 8:00 AM - 1:00 PM</p>
+                  <p className="text-white/80">Mon - Fri: 7:3 AM - 5:00 PM</p>
+                  <p className="text-white/60 text-lg font-bold">Sat: 8:00 AM - 12:30 PM</p>
                 </div>
               </div>
             </div>
@@ -82,7 +77,9 @@ const Footer = () => {
               <p className="text-white/70 text-sm">
                 Follow us for updates on new stock, cutting tips, and design inspiration.
               </p>
-              <div className="flex space-x-3 animate-fade-in" style={{ animationDelay: '600ms' }}>
+              <div className="flex space-x-3 animate-fade-in" style={{
+              animationDelay: '600ms'
+            }}>
                 <a href="https://www.facebook.com/profile.php?id=61560574889757" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal hover-scale transition-all duration-300">
                     <Facebook className="w-4 h-4" />
@@ -102,11 +99,7 @@ const Footer = () => {
               <div className="pt-4">
                 <h5 className="font-medium mb-2">Get Updates</h5>
                 <div className="flex space-x-2">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-brand-red"
-                  />
+                  <input type="email" placeholder="Your email" className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-brand-red" />
                   <Button variant="hero" size="sm">Subscribe</Button>
                 </div>
               </div>
@@ -121,8 +114,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
