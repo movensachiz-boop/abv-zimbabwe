@@ -62,6 +62,14 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start space-x-3">
+                <Mail className="w-5 h-5 text-brand-red mt-0.5" />
+                <div>
+                  <p className="text-white/80">info@abvboards.co.zw</p>
+                  <p className="text-white/60 text-sm">Business Inquiries</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-brand-red mt-0.5" />
                 <div>
                   <p className="text-white/80">Mon - Fri: 8:00 AM - 5:00 PM</p>
