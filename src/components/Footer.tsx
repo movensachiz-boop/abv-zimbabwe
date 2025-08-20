@@ -58,13 +58,13 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-brand-red" />
-                <p className="text-white/80">artipelbusinessventures@gmail.com</p>
+                <p className="text-white/80">Mon - Fri: 7:30 AM - 5:00 PM</p>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-brand-red mt-0.5" />
                 <div>
                   <p className="text-white/80">Mon - Fri: 7:3 AM - 5:00 PM</p>
-                  <p className="text-white/80">Sat: 8:00 AM - 12:30 PM</p>
+                  <p className="text-white/60 text-lg font-bold">Sat: 8:00 AM - 12:30 PM</p>
                 </div>
               </div>
             </div>
