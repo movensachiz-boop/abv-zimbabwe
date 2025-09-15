@@ -49,17 +49,17 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-brand-red mt-0.5" />
                 <div className="flex-1">
                   <a 
-                    href="https://maps.app.goo.gl/3AHoZBGhQmJw4asd8" 
+                    href="https://maps.app.goo.gl/rpbfQ3QAfBaNrPeG7" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-white/80 hover:text-brand-red transition-colors cursor-pointer"
                   >
-                    Gweru, Zimbabwe
+                    ABV Boards Gweru
                   </a>
-                  <p className="text-white/60 text-sm">SHAMROCK PARK UNIT 10</p>
+                  <p className="text-white/60 text-sm">HQ2X+C23, Gweru, Zimbabwe</p>
                   <div className="mt-2">
                     <a 
-                      href={`https://www.google.com/maps/dir/?api=1&destination=-19.448947,29.797536`}
+                      href={`https://www.google.com/maps/dir/?api=1&destination=HQ2X%2BC23%2C+Gweru%2C+Zimbabwe`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -94,8 +94,9 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-brand-red mt-0.5" />
                 <div>
-                  <p className="text-white/80">Mon - Fri: 8:00 AM - 5:00 PM</p>
-                  <p className="text-white/80">Sat: 8:00 AM - 12:30 PM</p>
+                  <p className="text-white/80">Mon - Fri: 9:00 AM - 5:00 PM</p>
+                  <p className="text-white/80">Sat: 9:00 AM - 12:30 PM</p>
+                  <p className="text-white/60 text-sm">Closed Sundays</p>
                 </div>
               </div>
             </div>
