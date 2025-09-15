@@ -31,6 +31,16 @@ import quartziteKX2007_1 from "@/assets/quartzite-kx2007-1.png";
 import quartziteKX2008 from "@/assets/quartzite-kx2008.png";
 import quartziteKH8004 from "@/assets/quartzite-kh8004.png";
 import quartziteKH8005 from "@/assets/quartzite-kh8005.png";
+import quartziteKH8006 from "@/assets/quartzite-kh8006.png";
+import quartziteKH8011 from "@/assets/quartzite-kh8011.png";
+import quartziteKC3001 from "@/assets/quartzite-kc3001.png";
+import quartziteKC3002 from "@/assets/quartzite-kc3002.png";
+import quartziteKC3003 from "@/assets/quartzite-kc3003.png";
+import quartziteKY9001 from "@/assets/quartzite-ky9001.png";
+import quartziteKY9002 from "@/assets/quartzite-ky9002.png";
+import quartziteKY9003 from "@/assets/quartzite-ky9003.png";
+import quartziteKY9004 from "@/assets/quartzite-ky9004.png";
+import quartziteKY9005 from "@/assets/quartzite-ky9005.png";
 const Products = () => {
   const boardTypes = [{
     name: "White Melamine",
@@ -248,6 +258,86 @@ const Products = () => {
     uses: "Classic interiors, marble alternative, luxury bathrooms, sophisticated kitchens",
     sizes: "Large format slabs, precision fabrication services",
     image: quartziteKH8005
+  }, {
+    name: "Quartzite KH8006",
+    category: "ABV Quartzite Collection - KH Series",
+    description: "Light grey quartzite with delicate natural veining and sophisticated finish",
+    features: ["Light grey base color", "Delicate natural veining", "Sophisticated surface finish", "High clarity", "Premium stone quality"],
+    uses: "Elegant interiors, modern bathrooms, sophisticated kitchens, commercial luxury projects",
+    sizes: "Premium slab selections, custom cutting services",
+    image: quartziteKH8006
+  }, {
+    name: "Quartzite KH8011",
+    category: "ABV Quartzite Collection - KH Series",
+    description: "Dramatic black quartzite with stunning starlight speckled effect and luxury finish",
+    features: ["Deep black base", "Starlight speckled pattern", "Luxury finish quality", "Dramatic visual impact", "Exceptional durability"],
+    uses: "Statement features, luxury residences, high-end commercial, dramatic accents",
+    sizes: "Select premium slabs, limited availability",
+    image: quartziteKH8011
+  }, {
+    name: "Quartzite KC3001",
+    category: "ABV Quartzite Collection - KC Series",
+    description: "Pure white quartzite with pristine finish and architectural grade quality",
+    features: ["Pure white color", "Pristine surface finish", "Architectural grade", "High brightness", "Minimal maintenance"],
+    uses: "Clean modern designs, architectural features, minimalist interiors, commercial spaces",
+    sizes: "Large format architectural slabs, precision cutting",
+    image: quartziteKC3001
+  }, {
+    name: "Quartzite KC3002",
+    category: "ABV Quartzite Collection - KC Series",
+    description: "Crisp white quartzite with clean finish and professional grade durability",
+    features: ["Crisp white appearance", "Clean surface finish", "Professional grade quality", "Consistent color", "High performance"],
+    uses: "Professional environments, clean interiors, commercial applications, modern residences",
+    sizes: "Commercial grade dimensions, custom fabrication",
+    image: quartziteKC3002
+  }, {
+    name: "Quartzite KC3003",
+    category: "ABV Quartzite Collection - KC Series",
+    description: "Deep black quartzite with solid color and premium finish quality",
+    features: ["Deep black color", "Solid uniform appearance", "Premium finish", "High contrast design", "Superior durability"],
+    uses: "Dramatic contrasts, modern designs, luxury applications, statement pieces",
+    sizes: "Premium select slabs, designer cuts",
+    image: quartziteKC3003
+  }, {
+    name: "Quartzite KY9001",
+    category: "ABV Quartzite Collection - KY Series",
+    description: "Elegant white quartzite with striking gold veining and luxurious appearance",
+    features: ["White base with gold veining", "Luxurious marble-like appearance", "Striking natural patterns", "Premium aesthetic", "Heat resistant"],
+    uses: "Luxury kitchens, high-end bathrooms, feature walls, designer projects",
+    sizes: "Premium slabs, bookmatched pairs available",
+    image: quartziteKY9001
+  }, {
+    name: "Quartzite KY9002",
+    category: "ABV Quartzite Collection - KY Series",
+    description: "Classic white quartzite with subtle grey veining and refined elegance",
+    features: ["Classic white base", "Subtle grey veining", "Refined elegance", "Natural stone character", "Timeless appeal"],
+    uses: "Traditional and contemporary designs, marble alternative, sophisticated interiors",
+    sizes: "Multiple slab sizes, custom edge profiling",
+    image: quartziteKY9002
+  }, {
+    name: "Quartzite KY9003",
+    category: "ABV Quartzite Collection - KY Series",
+    description: "Sophisticated white quartzite with dramatic grey veining and natural beauty",
+    features: ["White base with grey veining", "Dramatic natural patterns", "Sophisticated appearance", "Unique character", "Premium quality"],
+    uses: "Statement countertops, feature applications, luxury bathrooms, designer kitchens",
+    sizes: "Select slabs, precision fabrication services",
+    image: quartziteKY9003
+  }, {
+    name: "Quartzite KY9004",
+    category: "ABV Quartzite Collection - KY Series",
+    description: "Premium white quartzite with flowing natural veining and marble-like beauty",
+    features: ["Flowing natural veining", "Marble-like appearance", "Premium white base", "Unique patterns", "Luxury finish"],
+    uses: "High-end residential, luxury commercial, feature installations, designer projects",
+    sizes: "Premium select slabs, custom design options",
+    image: quartziteKY9004
+  }, {
+    name: "Quartzite KY9005",
+    category: "ABV Quartzite Collection - KY Series",
+    description: "Pure white quartzite with minimal veining and clean contemporary finish",
+    features: ["Pure white color", "Minimal natural veining", "Clean contemporary look", "High brightness value", "Modern aesthetic"],
+    uses: "Contemporary kitchens, modern bathrooms, clean design applications, architectural features",
+    sizes: "Large format slabs, precision cutting services",
+    image: quartziteKY9005
   }];
   return <div className="min-h-screen bg-background">
       <Header />
