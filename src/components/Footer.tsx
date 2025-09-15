@@ -48,8 +48,16 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-brand-red mt-0.5" />
                 <div>
-                  <p className="text-white/80">Gweru, Zimbabwe</p>
+                  <a 
+                    href="https://maps.app.goo.gl/3AHoZBGhQmJw4asd8" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white/80 hover:text-brand-red transition-colors cursor-pointer"
+                  >
+                    Gweru, Zimbabwe
+                  </a>
                   <p className="text-white/60 text-sm">SHAMROCK PARK UNIT 10</p>
+                  <p className="text-white/50 text-xs">Click to view on Google Maps</p>
                 </div>
               </div>
               
