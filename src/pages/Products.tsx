@@ -80,6 +80,16 @@ import quartziteKYY006_2 from "@/assets/quartzite-kyy006-2.png";
 import quartziteKYY007_2 from "@/assets/quartzite-kyy007-2.png";
 import quartziteKYY010_2 from "@/assets/quartzite-kyy010-2.png";
 import quartziteKYY011_2 from "@/assets/quartzite-kyy011-2.png";
+import quartziteBK039_2 from "@/assets/quartzite-bk039-2.png";
+import quartziteBK039_3 from "@/assets/quartzite-bk039-3.png";
+import quartziteBK040_1_3 from "@/assets/quartzite-bk040-1-3.png";
+import quartziteBK040_1 from "@/assets/quartzite-bk040-1.png";
+import quartziteBK040_2 from "@/assets/quartzite-bk040-2.png";
+import quartziteBK040_3 from "@/assets/quartzite-bk040-3.png";
+import quartziteBK042 from "@/assets/quartzite-bk042.png";
+import quartziteBK046_1_3 from "@/assets/quartzite-bk046-1-3.png";
+import quartziteBK046_1 from "@/assets/quartzite-bk046-1.png";
+import quartziteBK046_2 from "@/assets/quartzite-bk046-2.png";
 
 const Products = () => {
   const boardTypes = [{
@@ -689,7 +699,86 @@ const Products = () => {
     features: ["Pristine white color", "Minimal veining", "Ultra-clean finish", "Pure aesthetic", "Consistent appearance"],
     uses: "Minimalist designs, clean modern interiors, medical facilities, contemporary commercial",
     sizes: "Large format slabs, precision cutting available",
-    image: quartziteKYY011_2
+  }, {
+    name: "Quartzite BK039-2",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Mixed grey and white quartzite with dramatic natural patterns and bold veining",
+    features: ["Mixed grey and white tones", "Dramatic natural patterns", "Bold veining design", "Unique character variations", "Premium stone quality"],
+    uses: "Statement walls, luxury countertops, commercial feature areas, high-end residential",
+    sizes: "Large format slabs, custom cutting available",
+    image: quartziteBK039_2
+  }, {
+    name: "Quartzite BK039-3",
+    category: "ABV Quartzite Collection - BK Series", 
+    description: "Contemporary grey and white quartzite with artistic natural patterns",
+    features: ["Contemporary color blend", "Artistic natural patterns", "Grey and white fusion", "Modern aesthetic appeal", "Durable construction"],
+    uses: "Modern interiors, artistic features, designer projects, contemporary commercial",
+    sizes: "Standard and jumbo slabs, precision fabrication",
+    image: quartziteBK039_3
+  }, {
+    name: "Quartzite BK040-(1-3)",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Light colored quartzite with subtle blue and grey veining patterns",
+    features: ["Light base color", "Subtle blue accents", "Gentle grey veining", "Sophisticated appearance", "Natural stone beauty"],
+    uses: "Elegant interiors, bathroom vanities, kitchen surfaces, luxury applications",
+    sizes: "Multiple slab options, custom dimensions available",
+    image: quartziteBK040_1_3
+  }, {
+    name: "Quartzite BK040-1",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Light beige quartzite with elegant darker veining and warm tones",
+    features: ["Light beige base", "Elegant dark veining", "Warm color tones", "Natural stone character", "Premium finish"],
+    uses: "Traditional kitchens, warm interiors, residential projects, hospitality design",
+    sizes: "Standard residential sizes, custom cutting services",
+    image: quartziteBK040_1
+  }, {
+    name: "Quartzite BK040-2", 
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Sophisticated light quartzite with flowing veins and premium appearance",
+    features: ["Sophisticated light color", "Flowing vein patterns", "Premium stone appearance", "Consistent quality", "Elegant finish"],
+    uses: "Upscale residential, commercial spaces, luxury bathrooms, designer applications",
+    sizes: "Large format available, professional fabrication",
+    image: quartziteBK040_2
+  }, {
+    name: "Quartzite BK040-3",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Clean white and light grey quartzite with minimal veining and pure finish",
+    features: ["Clean white appearance", "Light grey accents", "Minimal veining", "Pure finish", "Timeless elegance"],
+    uses: "Clean modern designs, minimalist interiors, contemporary commercial, medical facilities",
+    sizes: "Multiple thickness options, precision cutting",
+    image: quartziteBK040_3
+  }, {
+    name: "Quartzite BK042",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Pure white marble-like quartzite with subtle veining and classic beauty",
+    features: ["Pure white color", "Marble-like appearance", "Subtle natural veining", "Classic elegance", "Premium grade quality"],
+    uses: "Luxury bathrooms, classic kitchens, high-end commercial, traditional designs",
+    sizes: "Large format slabs, bookmatched pairs available", 
+    image: quartziteBK042
+  }, {
+    name: "Quartzite BK046 (1-3)",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Light grey marble pattern quartzite with consistent veining and refined appearance",
+    features: ["Light grey marble pattern", "Consistent veining", "Refined appearance", "Uniform quality", "Professional grade"],
+    uses: "Commercial applications, office spaces, retail environments, modern interiors",
+    sizes: "Tile format available, custom shapes and sizes",
+    image: quartziteBK046_1_3
+  }, {
+    name: "Quartzite BK046-1",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Elegant light grey quartzite with subtle veining and sophisticated finish",
+    features: ["Elegant light grey", "Subtle natural veining", "Sophisticated finish", "Consistent appearance", "High durability"],
+    uses: "Contemporary kitchens, modern bathrooms, commercial countertops, architectural features",
+    sizes: "Standard and custom dimensions, edge profiling available",
+    image: quartziteBK046_1
+  }, {
+    name: "Quartzite BK046-2",
+    category: "ABV Quartzite Collection - BK Series", 
+    description: "Premium grey quartzite with flowing patterns and natural stone elegance",
+    features: ["Premium grey color", "Flowing natural patterns", "Stone elegance", "Superior durability", "Luxury appearance"],
+    uses: "High-end residential, luxury commercial, feature walls, premium countertops",
+    sizes: "Select premium slabs, custom fabrication services",
+    image: quartziteBK046_2
   }];
   return <div className="min-h-screen bg-background">
       <Header />
