@@ -47,7 +47,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-brand-red mt-0.5" />
-                <div>
+                <div className="flex-1">
                   <a 
                     href="https://maps.app.goo.gl/3AHoZBGhQmJw4asd8" 
                     target="_blank" 
@@ -57,7 +57,21 @@ const Footer = () => {
                     Gweru, Zimbabwe
                   </a>
                   <p className="text-white/60 text-sm">SHAMROCK PARK UNIT 10</p>
-                  <p className="text-white/50 text-xs">Click to view on Google Maps</p>
+                  <div className="mt-2">
+                    <a 
+                      href={`https://www.google.com/maps/dir/?api=1&destination=-19.448947,29.797536`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white transition-all duration-300"
+                      >
+                        Get Directions
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               </div>
               
