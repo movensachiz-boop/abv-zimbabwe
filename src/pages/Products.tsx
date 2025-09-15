@@ -11,6 +11,16 @@ import flutedPanelsImage from "@/assets/fluted-panels.jpg";
 import quartziteSlabsImage from "/lovable-uploads/797e6711-6720-4b64-a77f-af4d6f339739.png";
 import glassDoorProfilesImage from "@/assets/glass-door-profiles.jpg";
 import brookhillMatteImage from "@/assets/brookhill-matte.jpg";
+import quartziteCatalogCover from "@/assets/quartzite-catalog-cover.png";
+import quartziteKD1001 from "@/assets/quartzite-kd1001.png";
+import quartziteKD1002 from "@/assets/quartzite-kd1002.png";
+import quartziteKD1003 from "@/assets/quartzite-kd1003.png";
+import quartziteKD1004 from "@/assets/quartzite-kd1004.png";
+import quartziteKD1005 from "@/assets/quartzite-kd1005.png";
+import quartziteKD1006 from "@/assets/quartzite-kd1006.png";
+import quartziteKD1007 from "@/assets/quartzite-kd1007.png";
+import quartziteKD1009 from "@/assets/quartzite-kd1009.png";
+import quartziteKD1010 from "@/assets/quartzite-kd1010.png";
 const Products = () => {
   const boardTypes = [{
     name: "White Melamine",
@@ -76,6 +86,78 @@ const Products = () => {
     uses: "Traditional furniture, cabinetry, office applications, residential projects",
     sizes: "4x8 ft, 5x8 ft, matching edge banding available",
     image: brookhillMatteImage
+  }, {
+    name: "Quartzite KD1001",
+    category: "ABV Quartzite Collection",
+    description: "Premium quartzite with subtle white veining and natural texture - part of our partnership with Kianga",
+    features: ["Natural stone durability", "Heat resistant up to 300°C", "Scratch and stain resistant", "Food-safe surface", "Unique natural patterns"],
+    uses: "Kitchen countertops, bathroom vanities, commercial surfaces, feature walls",
+    sizes: "Full slabs, custom cuts, edge profiling available",
+    image: quartziteKD1001
+  }, {
+    name: "Quartzite KD1002",
+    category: "ABV Quartzite Collection",
+    description: "Elegant light grey quartzite with subtle natural veining patterns",
+    features: ["Superior hardness rating", "Non-porous surface", "UV resistant", "Low maintenance", "Natural antimicrobial properties"],
+    uses: "Premium countertops, backsplashes, flooring, wall cladding",
+    sizes: "Standard slabs 3000x1400mm, custom dimensions available",
+    image: quartziteKD1002
+  }, {
+    name: "Quartzite KD1003",
+    category: "ABV Quartzite Collection", 
+    description: "Sophisticated medium grey quartzite with consistent color and texture",
+    features: ["Consistent color distribution", "High impact resistance", "Chemical resistant", "Easy to clean", "Professional grade quality"],
+    uses: "Commercial kitchens, office spaces, retail surfaces, hospitality projects",
+    sizes: "Multiple thickness options, custom fabrication services",
+    image: quartziteKD1003
+  }, {
+    name: "Quartzite KD1004",
+    category: "ABV Quartzite Collection",
+    description: "Pure white quartzite with fine natural texture and premium finish",
+    features: ["Bright white appearance", "Exceptional durability", "Heat and frost resistant", "Non-slip surface options", "Architectural grade"],
+    uses: "Luxury bathrooms, kitchen islands, commercial applications, exterior cladding",
+    sizes: "Large format slabs, bookmatched pairs available",
+    image: quartziteKD1004
+  }, {
+    name: "Quartzite KD1005",
+    category: "ABV Quartzite Collection",
+    description: "Warm beige quartzite with natural speckled patterns and earthy tones",
+    features: ["Natural speckled appearance", "Warm color palette", "Slip resistant", "Weather resistant", "Long-lasting beauty"],
+    uses: "Outdoor kitchens, pool areas, commercial flooring, feature applications",
+    sizes: "Various thicknesses from 20-30mm, custom shapes available",
+    image: quartziteKD1005
+  }, {
+    name: "Quartzite KD1006",
+    category: "ABV Quartzite Collection",
+    description: "Contemporary grey quartzite with uniform texture and modern appeal",
+    features: ["Uniform surface texture", "Contemporary aesthetics", "High compressive strength", "Freeze-thaw resistant", "Minimal maintenance required"],
+    uses: "Modern interiors, commercial surfaces, architectural features, landscape applications",
+    sizes: "Standard and jumbo slabs, precision cutting services",
+    image: quartziteKD1006
+  }, {
+    name: "Quartzite KD1007",
+    category: "ABV Quartzite Collection",
+    description: "Dramatic black quartzite with starlight effect and premium finish",
+    features: ["Starlight speckled effect", "Deep black color", "Luxury appearance", "Exceptional hardness", "Statement-making design"],
+    uses: "High-end residential, luxury commercial, feature walls, premium countertops",
+    sizes: "Select slabs, limited availability, custom fabrication",
+    image: quartziteKD1007
+  }, {
+    name: "Quartzite KD1009",
+    category: "ABV Quartzite Collection",
+    description: "Refined grey quartzite with subtle natural variations and smooth finish",
+    features: ["Subtle natural variations", "Smooth polished finish", "High density construction", "Stain resistant surface", "Timeless elegance"],
+    uses: "Traditional and modern kitchens, bathroom surfaces, office environments",
+    sizes: "Standard residential sizes, commercial dimensions available",
+    image: quartziteKD1009
+  }, {
+    name: "Quartzite KD1010",
+    category: "ABV Quartzite Collection",
+    description: "Rich brown quartzite with golden highlights and premium natural finish",
+    features: ["Rich brown base color", "Golden highlight accents", "Natural stone authenticity", "Superior wear resistance", "Unique character patterns"],
+    uses: "Luxury residences, boutique commercial, specialty applications, designer projects",
+    sizes: "Premium select slabs, designer cuts, custom edge profiles",
+    image: quartziteKD1010
   }];
   return <div className="min-h-screen bg-background">
       <Header />
