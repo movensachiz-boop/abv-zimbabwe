@@ -21,6 +21,16 @@ import quartziteKD1006 from "@/assets/quartzite-kd1006.png";
 import quartziteKD1007 from "@/assets/quartzite-kd1007.png";
 import quartziteKD1009 from "@/assets/quartzite-kd1009.png";
 import quartziteKD1010 from "@/assets/quartzite-kd1010.png";
+import quartziteKD1011 from "@/assets/quartzite-kd1011.png";
+import quartziteKX2001 from "@/assets/quartzite-kx2001.png";
+import quartziteKX2002 from "@/assets/quartzite-kx2002.png";
+import quartziteKX2003 from "@/assets/quartzite-kx2003.png";
+import quartziteKX2004 from "@/assets/quartzite-kx2004.png";
+import quartziteKX2007 from "@/assets/quartzite-kx2007.png";
+import quartziteKX2007_1 from "@/assets/quartzite-kx2007-1.png";
+import quartziteKX2008 from "@/assets/quartzite-kx2008.png";
+import quartziteKH8004 from "@/assets/quartzite-kh8004.png";
+import quartziteKH8005 from "@/assets/quartzite-kh8005.png";
 const Products = () => {
   const boardTypes = [{
     name: "White Melamine",
@@ -158,6 +168,86 @@ const Products = () => {
     uses: "Luxury residences, boutique commercial, specialty applications, designer projects",
     sizes: "Premium select slabs, designer cuts, custom edge profiles",
     image: quartziteKD1010
+  }, {
+    name: "Quartzite KD1011",
+    category: "ABV Quartzite Collection",
+    description: "Premium cream quartzite with natural speckled texture and warm finish",
+    features: ["Cream base color", "Natural speckled pattern", "Warm aesthetic appeal", "Durable construction", "Timeless elegance"],
+    uses: "Traditional kitchens, warm-toned interiors, residential projects, hospitality design",
+    sizes: "Standard and custom dimensions, various thickness options",
+    image: quartziteKD1011
+  }, {
+    name: "Quartzite KX2001",
+    category: "ABV Quartzite Collection - KX Series",
+    description: "Pure white quartzite with crisp clean finish and minimal veining",
+    features: ["Pure white appearance", "Minimal natural veining", "Crisp clean finish", "High brightness value", "Premium grade quality"],
+    uses: "Modern minimalist designs, luxury bathrooms, clean contemporary kitchens",
+    sizes: "Large format slabs, precision cutting available",
+    image: quartziteKX2001
+  }, {
+    name: "Quartzite KX2002",
+    category: "ABV Quartzite Collection - KX Series",
+    description: "Soft off-white quartzite with subtle texture and elegant finish",
+    features: ["Soft off-white tone", "Subtle surface texture", "Elegant appearance", "Consistent color", "Low maintenance"],
+    uses: "Sophisticated interiors, office spaces, residential applications, commercial projects",
+    sizes: "Multiple slab sizes, custom fabrication services",
+    image: quartziteKX2002
+  }, {
+    name: "Quartzite KX2003",
+    category: "ABV Quartzite Collection - KX Series",
+    description: "Light grey quartzite with uniform texture and contemporary appeal",
+    features: ["Light grey color", "Uniform surface texture", "Contemporary styling", "Fade resistant", "Weather resistant"],
+    uses: "Modern architecture, commercial spaces, exterior applications, interior features",
+    sizes: "Architectural dimensions, custom shapes available",
+    image: quartziteKX2003
+  }, {
+    name: "Quartzite KX2004",
+    category: "ABV Quartzite Collection - KX Series",
+    description: "Medium grey quartzite with rich color depth and professional finish",
+    features: ["Medium grey tone", "Rich color depth", "Professional appearance", "High durability rating", "Versatile design compatibility"],
+    uses: "Professional environments, commercial kitchens, upscale residential, office buildings",
+    sizes: "Commercial grade dimensions, precision cutting",
+    image: quartziteKX2004
+  }, {
+    name: "Quartzite KX2007",
+    category: "ABV Quartzite Collection - KX Series",
+    description: "Classic grey quartzite with neutral tone and refined finish",
+    features: ["Classic grey color", "Neutral tone palette", "Refined surface finish", "Stain resistant", "Easy maintenance"],
+    uses: "Traditional and modern designs, kitchen countertops, bathroom surfaces, commercial applications",
+    sizes: "Standard residential and commercial sizes",
+    image: quartziteKX2007
+  }, {
+    name: "Quartzite KX2007-1",
+    category: "ABV Quartzite Collection - KX Series",
+    description: "Light beige quartzite with warm undertones and natural beauty",
+    features: ["Light beige base", "Warm undertones", "Natural stone character", "Heat resistant", "Scratch resistant"],
+    uses: "Warm interior designs, traditional kitchens, cozy residential spaces, hospitality projects",
+    sizes: "Various thickness options, custom edge profiles",
+    image: quartziteKX2007_1
+  }, {
+    name: "Quartzite KX2008",
+    category: "ABV Quartzite Collection - KX Series",
+    description: "Charcoal grey quartzite with sophisticated dark finish and premium quality",
+    features: ["Charcoal grey color", "Sophisticated dark finish", "Premium stone quality", "High impact resistance", "Modern aesthetic"],
+    uses: "Contemporary designs, luxury applications, statement features, high-end commercial",
+    sizes: "Select premium slabs, custom fabrication",
+    image: quartziteKX2008
+  }, {
+    name: "Quartzite KH8004",
+    category: "ABV Quartzite Collection - KH Series",
+    description: "Dark grey quartzite with marble-like veining and luxurious appearance",
+    features: ["Dark grey base", "Marble-like veining", "Luxurious appearance", "Unique pattern variations", "Premium finish quality"],
+    uses: "Luxury residences, high-end commercial, feature walls, statement countertops",
+    sizes: "Premium select slabs, bookmatched options",
+    image: quartziteKH8004
+  }, {
+    name: "Quartzite KH8005",
+    category: "ABV Quartzite Collection - KH Series",
+    description: "Elegant white quartzite with subtle grey veining and refined texture",
+    features: ["Elegant white base", "Subtle grey veining", "Refined surface texture", "Natural stone authenticity", "Timeless beauty"],
+    uses: "Classic interiors, marble alternative, luxury bathrooms, sophisticated kitchens",
+    sizes: "Large format slabs, precision fabrication services",
+    image: quartziteKH8005
   }];
   return <div className="min-h-screen bg-background">
       <Header />
