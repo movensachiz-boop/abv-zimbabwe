@@ -70,6 +70,16 @@ import quartziteKYY010 from "@/assets/quartzite-kyy010.png";
 import quartziteKYY011 from "@/assets/quartzite-kyy011.png";
 import quartziteBK007 from "@/assets/quartzite-bk007.png";
 import quartziteBK009 from "@/assets/quartzite-bk009.png";
+import quartziteBK007_2 from "@/assets/quartzite-bk007-2.png";
+import quartziteBK009_2 from "@/assets/quartzite-bk009-2.png";
+import quartziteBK012_2 from "@/assets/quartzite-bk012-2.png";
+import quartziteKYY003_2 from "@/assets/quartzite-kyy003-2.png";
+import quartziteKYY004_2 from "@/assets/quartzite-kyy004-2.png";
+import quartziteKYY005_2 from "@/assets/quartzite-kyy005-2.png";
+import quartziteKYY006_2 from "@/assets/quartzite-kyy006-2.png";
+import quartziteKYY007_2 from "@/assets/quartzite-kyy007-2.png";
+import quartziteKYY010_2 from "@/assets/quartzite-kyy010-2.png";
+import quartziteKYY011_2 from "@/assets/quartzite-kyy011-2.png";
 
 const Products = () => {
   const boardTypes = [{
@@ -600,6 +610,86 @@ const Products = () => {
     uses: "Modern interiors, contemporary commercial, dark accent features, sophisticated designs",
     sizes: "Standard commercial sizes, custom cutting services",
     image: quartziteBK009
+  }, {
+    name: "Quartzite BK007 Calacatta",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Elegant white quartzite with golden grey veining resembling Calacatta marble",
+    features: ["Elegant white base", "Golden grey dramatic veining", "Calacatta marble appearance", "Natural flowing patterns", "Luxury stone quality"],
+    uses: "Luxury applications, marble alternative, high-end kitchens, sophisticated interiors",
+    sizes: "Premium select slabs, bookmatched options available",
+    image: quartziteBK007_2
+  }, {
+    name: "Quartzite BK009 Charcoal",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Deep charcoal grey quartzite with natural mineral variations and matte finish",
+    features: ["Deep charcoal grey", "Natural mineral variations", "Matte textured finish", "Contemporary aesthetics", "High durability"],
+    uses: "Modern commercial spaces, dark accent walls, contemporary kitchens, industrial design",
+    sizes: "Large format slabs, custom cutting available",
+    image: quartziteBK009_2
+  }, {
+    name: "Quartzite BK012 Azurite",
+    category: "ABV Quartzite Collection - BK Series",
+    description: "Unique dark quartzite with brilliant purple-blue mineral highlights and dramatic patterns",
+    features: ["Dark base with purple-blue highlights", "Brilliant mineral flashes", "Dramatic natural patterns", "Unique coloration", "Statement stone quality"],
+    uses: "Feature walls, artistic applications, luxury commercial, unique design statements",
+    sizes: "Select premium slabs, limited availability",
+    image: quartziteBK012_2
+  }, {
+    name: "Quartzite KYY003 Calacatta Gold",
+    category: "ABV Quartzite Collection - KYY Series",
+    description: "Stunning white quartzite with dramatic orange and grey veining resembling Calacatta Gold marble",
+    features: ["Stunning white base", "Dramatic orange and grey veining", "Calacatta Gold appearance", "Bold natural patterns", "Premium luxury quality"],
+    uses: "Luxury residences, high-end commercial, statement countertops, feature applications",
+    sizes: "Premium select slabs, professional fabrication",
+    image: quartziteKYY003_2
+  }, {
+    name: "Quartzite KYY004 Emerald Dream",
+    category: "ABV Quartzite Collection - KYY Series",
+    description: "Extraordinary quartzite with vibrant green and teal mineral patterns in natural stone matrix",
+    features: ["Vibrant green and teal patterns", "Natural mineral inclusions", "Unique color palette", "Artistic stone beauty", "One-of-a-kind appearance"],
+    uses: "Artistic installations, luxury feature walls, unique commercial applications, designer projects",
+    sizes: "Specialty slabs, limited selection, custom fabrication",
+    image: quartziteKYY004_2
+  }, {
+    name: "Quartzite KYY005 Golden Veins",
+    category: "ABV Quartzite Collection - KYY Series",
+    description: "Elegant white quartzite with rich golden and copper veining patterns",
+    features: ["Elegant white base", "Rich golden veining", "Copper accent tones", "Warm luxury appeal", "Natural flowing patterns"],
+    uses: "Warm luxury interiors, traditional and contemporary kitchens, hospitality design",
+    sizes: "Premium slab selections, edge profiling available",
+    image: quartziteKYY005_2
+  }, {
+    name: "Quartzite KYY006 Blue Marble",
+    category: "ABV Quartzite Collection - KYY Series",
+    description: "Sophisticated white quartzite with striking blue and gold veining patterns",
+    features: ["Sophisticated white base", "Striking blue veining", "Gold accent highlights", "Marble-like appearance", "Elegant natural patterns"],
+    uses: "Elegant bathrooms, sophisticated kitchens, luxury commercial, artistic applications",
+    sizes: "Large format slabs, precision cutting services",
+    image: quartziteKYY006_2
+  }, {
+    name: "Quartzite KYY007 Crystal",
+    category: "ABV Quartzite Collection - KYY Series",
+    description: "Dramatic light quartzite with intense grey and charcoal veining and crystalline texture",
+    features: ["Light crystalline base", "Intense grey veining", "Charcoal accent patterns", "Crystalline texture", "Dramatic natural beauty"],
+    uses: "Statement features, luxury applications, modern interiors, architectural elements",
+    sizes: "Select premium slabs, bookmatched pairs",
+    image: quartziteKYY007_2
+  }, {
+    name: "Quartzite KYY010 Carrara",
+    category: "ABV Quartzite Collection - KYY Series",
+    description: "Classic white quartzite with soft golden brown veining resembling Carrara marble",
+    features: ["Classic white appearance", "Soft golden brown veining", "Carrara marble resemblance", "Timeless elegance", "Natural sophistication"],
+    uses: "Traditional and modern applications, marble alternative, luxury interiors, commercial projects",
+    sizes: "Standard and large format slabs, full fabrication services",
+    image: quartziteKYY010_2
+  }, {
+    name: "Quartzite KYY011 Pure",
+    category: "ABV Quartzite Collection - KYY Series",
+    description: "Pristine white quartzite with minimal subtle veining and ultra-clean finish",
+    features: ["Pristine white color", "Minimal veining", "Ultra-clean finish", "Pure aesthetic", "Consistent appearance"],
+    uses: "Minimalist designs, clean modern interiors, medical facilities, contemporary commercial",
+    sizes: "Large format slabs, precision cutting available",
+    image: quartziteKYY011_2
   }];
   return <div className="min-h-screen bg-background">
       <Header />
