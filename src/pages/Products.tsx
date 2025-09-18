@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { CheckCircle, Info } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { CheckCircle, Info, Search } from "lucide-react";
 import { useState } from "react";
 import whiteMelamineImage from "@/assets/white-melamine.jpg";
 import stormGrayMatteImage from "@/assets/storm-gray-matte.jpg";
@@ -107,6 +108,7 @@ import quartziteCuttingMachine from "@/assets/quartzite-cutting-machine.jpg";
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Finished product examples for different categories
   const finishedExamples = {
@@ -838,7 +840,16 @@ const Products = () => {
     sizes: "Select premium slabs, custom fabrication services",
     image: quartziteBK046_2
   }];
-  return <div className="min-h-screen bg-background">
+  
+  const filteredBoardTypes = boardTypes.filter(board =>
+    board.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    board.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    board.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    board.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
+  return (
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
@@ -856,11 +867,37 @@ const Products = () => {
         </div>
       </section>
 
+      {/* Search Section */}
+      <section className="py-8 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-md mx-auto">
+            <div className="flex gap-2">
+              <Input
+                type="text"
+                placeholder="Search products, categories, or features..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="flex-1"
+              />
+              <Button variant="outline" size="icon">
+                <Search className="h-4 w-4" />
+              </Button>
+            </div>
+            {searchTerm && (
+              <p className="text-sm text-muted-foreground mt-2 text-center">
+                Found {filteredBoardTypes.length} product{filteredBoardTypes.length !== 1 ? 's' : ''} matching "{searchTerm}"
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Products Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {boardTypes.map((board, index) => <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+            {filteredBoardTypes.length > 0 ? (
+              filteredBoardTypes.map((board, index) => <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {/* Product Image */}
                 <div className="h-48 overflow-hidden">
                   <OptimizedImage
@@ -969,7 +1006,22 @@ const Products = () => {
                     </DialogContent>
                   </Dialog>
                 </CardContent>
-              </Card>)}
+                 </Card>
+              )
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-muted-foreground mb-2">No products found</h3>
+                <p className="text-muted-foreground">Try searching with different keywords or browse all products.</p>
+                <Button 
+                  variant="outline" 
+                  className="mt-4"
+                  onClick={() => setSearchTerm("")}
+                >
+                  Clear Search
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -996,6 +1048,8 @@ const Products = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Products;
