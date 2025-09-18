@@ -2,7 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { CheckCircle, Info } from "lucide-react";
+import { useState } from "react";
 import whiteMelamineImage from "@/assets/white-melamine.jpg";
 import stormGrayMatteImage from "@/assets/storm-gray-matte.jpg";
 import stormGrayGlossImage from "@/assets/storm-gray-gloss.jpg";
@@ -93,8 +96,35 @@ import quartziteBK046_2 from "@/assets/quartzite-bk046-2.png";
 import marblePVCConcrete from "@/assets/marble-pvc-concrete.jpg";
 import marblePVCDark from "@/assets/marble-pvc-dark.jpg";
 import marblePVCGoldVeined from "@/assets/marble-pvc-gold-veined.jpg";
+import finishedFurniture from "@/assets/finished-furniture.jpg";
+import heroCuttingWorkshop from "@/assets/hero-cutting-workshop.jpg";
+import boardCuttingMachine from "@/assets/board-cutting-machine.jpg";
+import boardsStack from "@/assets/boards-stack.jpg";
+import mdfBoards from "@/assets/mdf-boards.jpg";
+import plywoodBoards from "@/assets/plywood-boards.jpg";
+import quartziteCuttingMachine from "@/assets/quartzite-cutting-machine.jpg";
 
 const Products = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // Finished product examples for different categories
+  const finishedExamples = {
+    melamine: [finishedFurniture, heroCuttingWorkshop, boardsStack],
+    quartzite: [quartziteCuttingMachine, heroCuttingWorkshop, boardCuttingMachine],
+    pvc: [finishedFurniture, boardsStack, mdfBoards],
+    panels: [heroCuttingWorkshop, finishedFurniture, plywoodBoards],
+    glass: [finishedFurniture, heroCuttingWorkshop, boardsStack]
+  };
+
+  const getProductCategory = (productName) => {
+    if (productName.toLowerCase().includes('melamine') || productName.toLowerCase().includes('brookhill')) return 'melamine';
+    if (productName.toLowerCase().includes('quartzite')) return 'quartzite';
+    if (productName.toLowerCase().includes('pvc') || productName.toLowerCase().includes('marble')) return 'pvc';
+    if (productName.toLowerCase().includes('fluted') || productName.toLowerCase().includes('panel')) return 'panels';
+    if (productName.toLowerCase().includes('glass')) return 'glass';
+    return 'melamine'; // default
+  };
+
   const boardTypes = [{
     name: "White Melamine",
     category: "Premium Finish",
@@ -859,23 +889,83 @@ const Products = () => {
                 <CardContent className="space-y-4">
                   {/* Key Features */}
                   <div>
-                    
                     <ul className="space-y-1">
-                      {board.features.slice(0, 3).map((feature, idx) => <li key={idx} className="flex items-start gap-2 text-sm">
-                          
-                          
-                        </li>)}
+                      {board.features.slice(0, 3).map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
-                  {/* Common Uses */}
-                  
-
                   {/* Available Sizes */}
                   <div>
-                    
-                    
+                    <p className="text-sm text-muted-foreground">
+                      <strong>Sizes:</strong> {board.sizes}
+                    </p>
                   </div>
+
+                  {/* View Uses Button */}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" className="w-full mt-4" onClick={() => setSelectedProduct(board)}>
+                        <Info className="w-4 h-4 mr-2" />
+                        View Uses & Examples
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                      <DialogHeader>
+                        <DialogTitle className="text-2xl">{board.name}</DialogTitle>
+                        <DialogDescription className="text-base">
+                          {board.description}
+                        </DialogDescription>
+                      </DialogHeader>
+                      
+                      <div className="grid md:grid-cols-2 gap-6 mt-6">
+                        {/* Uses and Features */}
+                        <div className="space-y-4">
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3">Common Uses</h3>
+                            <p className="text-muted-foreground">{board.uses}</p>
+                          </div>
+                          
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3">Key Features</h3>
+                            <ul className="space-y-2">
+                              {board.features.map((feature, idx) => (
+                                <li key={idx} className="flex items-start gap-2 text-sm">
+                                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div>
+                            <h3 className="text-lg font-semibold mb-2">Available Sizes</h3>
+                            <p className="text-sm text-muted-foreground">{board.sizes}</p>
+                          </div>
+                        </div>
+                        
+                        {/* Finished Product Examples */}
+                        <div>
+                          <h3 className="text-lg font-semibold mb-3">Finished Product Examples</h3>
+                          <div className="grid grid-cols-1 gap-4">
+                            {finishedExamples[getProductCategory(board.name)].map((image, idx) => (
+                              <div key={idx} className="overflow-hidden rounded-lg">
+                                <img 
+                                  src={image} 
+                                  alt={`${board.name} finished product example ${idx + 1}`}
+                                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </CardContent>
               </Card>)}
           </div>
