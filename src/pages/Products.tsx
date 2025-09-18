@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -862,14 +863,12 @@ const Products = () => {
             {boardTypes.map((board, index) => <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {/* Product Image */}
                 <div className="h-48 overflow-hidden">
-                  <img 
-                    src={board.image} 
-                    alt={`${board.name} - ${board.category} board from ABV Boards Zimbabwe`} 
+                  <OptimizedImage
+                    src={board.image}
+                    alt={`${board.name} - ${board.category} board from ABV Boards Zimbabwe`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                    width="400"
-                    height="192"
+                    width={400}
+                    height={192}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
@@ -954,10 +953,13 @@ const Products = () => {
                           <div className="grid grid-cols-1 gap-4">
                             {finishedExamples[getProductCategory(board.name)].map((image, idx) => (
                               <div key={idx} className="overflow-hidden rounded-lg">
-                                <img 
-                                  src={image} 
-                                  alt={`${board.name} finished product example ${idx + 1}`}
+                                <OptimizedImage
+                                  src={image}
+                                  alt={`${board.name} finished product example ${idx + 1} - completed project using ${board.category}`}
                                   className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                                  width={400}
+                                  height={160}
+                                  sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                               </div>
                             ))}
