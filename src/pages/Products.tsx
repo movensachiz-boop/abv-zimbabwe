@@ -90,6 +90,9 @@ import quartziteBK042 from "@/assets/quartzite-bk042.png";
 import quartziteBK046_1_3 from "@/assets/quartzite-bk046-1-3.png";
 import quartziteBK046_1 from "@/assets/quartzite-bk046-1.png";
 import quartziteBK046_2 from "@/assets/quartzite-bk046-2.png";
+import marblePVCConcrete from "@/assets/marble-pvc-concrete.jpg";
+import marblePVCDark from "@/assets/marble-pvc-dark.jpg";
+import marblePVCGoldVeined from "@/assets/marble-pvc-gold-veined.jpg";
 
 const Products = () => {
   const boardTypes = [{
@@ -156,6 +159,30 @@ const Products = () => {
     uses: "Traditional furniture, cabinetry, office applications, residential projects",
     sizes: "4x8 ft, 5x8 ft, matching edge banding available",
     image: brookhillMatteImage
+  }, {
+    name: "Concrete Marble PVC Sheet",
+    category: "Marble PVC Collection",
+    description: "Premium PVC sheet with realistic concrete marble texture and natural stone appearance",
+    features: ["Waterproof and moisture resistant", "Easy to clean and maintain", "Realistic marble texture", "Flexible installation", "Cost-effective stone alternative"],
+    uses: "Wall panels, cabinet surfaces, bathroom applications, kitchen backsplashes",
+    sizes: "4x8 ft, 5x10 ft, custom cutting available",
+    image: marblePVCConcrete
+  }, {
+    name: "Dark Marble PVC Sheet",
+    category: "Marble PVC Collection", 
+    description: "Elegant dark marble PVC sheet with sophisticated natural veining patterns",
+    features: ["Rich dark marble appearance", "UV resistant finish", "Anti-slip surface options", "Durable PVC construction", "Seamless installation"],
+    uses: "Feature walls, countertop surfaces, commercial interiors, decorative panels",
+    sizes: "4x8 ft, 5x10 ft, various thickness options",
+    image: marblePVCDark
+  }, {
+    name: "Gold Veined Marble PVC Sheet",
+    category: "Marble PVC Collection",
+    description: "Luxury PVC sheet with dramatic dark marble base and striking gold veining accents",
+    features: ["Premium gold vein detailing", "High-impact resistance", "Chemical resistant surface", "Luxury appearance", "Professional installation ready"],
+    uses: "High-end interiors, accent walls, luxury furniture, commercial applications",
+    sizes: "Standard sheets, custom dimensions, edge finishing available",
+    image: marblePVCGoldVeined
   }, {
     name: "Quartzite KD1001",
     category: "ABV Quartzite Collection",
