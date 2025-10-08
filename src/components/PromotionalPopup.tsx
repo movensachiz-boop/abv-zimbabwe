@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import promoQuartz from "@/assets/promo-quartz-catalogue.png";
@@ -37,12 +36,23 @@ const PromotionalPopup = () => {
 
   useEffect(() => {
     // Show popup after 2 seconds
-    const timer = setTimeout(() => {
+    const showTimer = setTimeout(() => {
       setOpen(true);
     }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(showTimer);
   }, []);
+
+  useEffect(() => {
+    // Auto-close after 3.5 seconds if open
+    if (open) {
+      const closeTimer = setTimeout(() => {
+        setOpen(false);
+      }, 3500);
+
+      return () => clearTimeout(closeTimer);
+    }
+  }, [open]);
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % promotionalFliers.length);
@@ -52,9 +62,11 @@ const PromotionalPopup = () => {
     setCurrentIndex((prev) => (prev - 1 + promotionalFliers.length) % promotionalFliers.length);
   };
 
+  if (!open) return null;
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-md p-0 gap-0 bg-background/95 backdrop-blur-sm">
+    <div className="fixed bottom-4 left-4 z-50 animate-fade-in">
+      <div className="relative max-w-sm bg-background rounded-lg shadow-2xl border">
         <Button
           variant="ghost"
           size="icon"
@@ -64,11 +76,11 @@ const PromotionalPopup = () => {
           <X className="h-4 w-4" />
         </Button>
 
-        <div className="relative">
+        <div className="relative p-2">
           <img
             src={promotionalFliers[currentIndex].image}
             alt={promotionalFliers[currentIndex].alt}
-            className="w-full h-auto max-h-[50vh] object-contain"
+            className="w-full h-auto max-h-[40vh] object-contain rounded"
           />
 
           {promotionalFliers.length > 1 && (
@@ -108,8 +120,8 @@ const PromotionalPopup = () => {
             </>
           )}
         </div>
-      </DialogContent>
-    </Dialog>
+      </div>
+    </div>
   );
 };
 
