@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle, Info, Search } from "lucide-react";
 import { useState } from "react";
 import whiteMelamineImage from "@/assets/white-melamine.jpg";
@@ -109,6 +110,7 @@ import quartziteCuttingMachine from "@/assets/quartzite-cutting-machine.jpg";
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Finished product examples for different categories
   const finishedExamples = {
@@ -841,12 +843,20 @@ const Products = () => {
     image: quartziteBK046_2
   }];
   
-  const filteredBoardTypes = boardTypes.filter(board =>
-    board.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    board.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    board.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    board.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  // Get unique categories
+  const categories = ["all", ...Array.from(new Set(boardTypes.map(board => board.category)))];
+  
+  const filteredBoardTypes = boardTypes.filter(board => {
+    const matchesSearch = 
+      board.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      board.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      board.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      board.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesCategory = selectedCategory === "all" || board.category === selectedCategory;
+    
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -867,10 +877,25 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Search Section */}
+      {/* Category Tabs */}
       <section className="py-8 bg-muted/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-md mx-auto">
+          <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
+            <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2 bg-transparent">
+              {categories.map((category) => (
+                <TabsTrigger 
+                  key={category} 
+                  value={category}
+                  className="capitalize"
+                >
+                  {category === "all" ? "All Products" : category}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+          
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto mt-6">
             <div className="flex gap-2">
               <Input
                 type="text"
@@ -883,9 +908,11 @@ const Products = () => {
                 <Search className="h-4 w-4" />
               </Button>
             </div>
-            {searchTerm && (
+            {(searchTerm || selectedCategory !== "all") && (
               <p className="text-sm text-muted-foreground mt-2 text-center">
-                Found {filteredBoardTypes.length} product{filteredBoardTypes.length !== 1 ? 's' : ''} matching "{searchTerm}"
+                Found {filteredBoardTypes.length} product{filteredBoardTypes.length !== 1 ? 's' : ''}
+                {searchTerm && ` matching "${searchTerm}"`}
+                {selectedCategory !== "all" && ` in ${selectedCategory}`}
               </p>
             )}
           </div>
@@ -1016,9 +1043,12 @@ const Products = () => {
                 <Button 
                   variant="outline" 
                   className="mt-4"
-                  onClick={() => setSearchTerm("")}
+                  onClick={() => {
+                    setSearchTerm("");
+                    setSelectedCategory("all");
+                  }}
                 >
-                  Clear Search
+                  Clear Filters
                 </Button>
               </div>
             )}
