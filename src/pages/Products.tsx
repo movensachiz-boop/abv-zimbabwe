@@ -106,7 +106,6 @@ import boardsStack from "@/assets/boards-stack.jpg";
 import mdfBoards from "@/assets/mdf-boards.jpg";
 import plywoodBoards from "@/assets/plywood-boards.jpg";
 import quartziteCuttingMachine from "@/assets/quartzite-cutting-machine.jpg";
-
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -120,8 +119,7 @@ const Products = () => {
     panels: [heroCuttingWorkshop, finishedFurniture, plywoodBoards],
     glass: [finishedFurniture, heroCuttingWorkshop, boardsStack]
   };
-
-  const getProductCategory = (productName) => {
+  const getProductCategory = productName => {
     if (productName.toLowerCase().includes('melamine') || productName.toLowerCase().includes('brookhill')) return 'melamine';
     if (productName.toLowerCase().includes('quartzite')) return 'quartzite';
     if (productName.toLowerCase().includes('pvc') || productName.toLowerCase().includes('marble')) return 'pvc';
@@ -129,7 +127,6 @@ const Products = () => {
     if (productName.toLowerCase().includes('glass')) return 'glass';
     return 'melamine'; // default
   };
-
   const boardTypes = [{
     name: "White Melamine",
     category: "Premium Finish",
@@ -204,7 +201,7 @@ const Products = () => {
     image: marblePVCConcrete
   }, {
     name: "Dark Marble PVC Sheet",
-    category: "Marble PVC Collection", 
+    category: "Marble PVC Collection",
     description: "Elegant dark marble PVC sheet with sophisticated natural veining patterns",
     features: ["Rich dark marble appearance", "UV resistant finish", "Anti-slip surface options", "Durable PVC construction", "Seamless installation"],
     uses: "Feature walls, countertop surfaces, commercial interiors, decorative panels",
@@ -236,7 +233,7 @@ const Products = () => {
     image: quartziteKD1002
   }, {
     name: "Quartzite KD1003",
-    category: "ABV Quartzite Collection", 
+    category: "ABV Quartzite Collection",
     description: "Sophisticated medium grey quartzite with consistent color and texture",
     features: ["Consistent color distribution", "High impact resistance", "Chemical resistant", "Easy to clean", "Professional grade quality"],
     uses: "Commercial kitchens, office spaces, retail surfaces, hospitality projects",
@@ -588,7 +585,7 @@ const Products = () => {
     image: quartziteKY9801
   }, {
     name: "Quartzite KY9802",
-    category: "ABV Quartzite Collection - KY Series", 
+    category: "ABV Quartzite Collection - KY Series",
     description: "Unique light quartzite with colorful speckled patterns including blue and gold accents",
     features: ["Light base color", "Colorful speckled patterns", "Blue and gold accents", "Unique natural character", "Artistic stone appeal"],
     uses: "Artistic applications, unique installations, designer projects, creative interiors",
@@ -760,7 +757,7 @@ const Products = () => {
     description: "Pristine white quartzite with minimal subtle veining and ultra-clean finish",
     features: ["Pristine white color", "Minimal veining", "Ultra-clean finish", "Pure aesthetic", "Consistent appearance"],
     uses: "Minimalist designs, clean modern interiors, medical facilities, contemporary commercial",
-    sizes: "Large format slabs, precision cutting available",
+    sizes: "Large format slabs, precision cutting available"
   }, {
     name: "Quartzite BK039-2",
     category: "ABV Quartzite Collection - BK Series",
@@ -771,7 +768,7 @@ const Products = () => {
     image: quartziteBK039_2
   }, {
     name: "Quartzite BK039-3",
-    category: "ABV Quartzite Collection - BK Series", 
+    category: "ABV Quartzite Collection - BK Series",
     description: "Contemporary grey and white quartzite with artistic natural patterns",
     features: ["Contemporary color blend", "Artistic natural patterns", "Grey and white fusion", "Modern aesthetic appeal", "Durable construction"],
     uses: "Modern interiors, artistic features, designer projects, contemporary commercial",
@@ -794,7 +791,7 @@ const Products = () => {
     sizes: "Standard residential sizes, custom cutting services",
     image: quartziteBK040_1
   }, {
-    name: "Quartzite BK040-2", 
+    name: "Quartzite BK040-2",
     category: "ABV Quartzite Collection - BK Series",
     description: "Sophisticated light quartzite with flowing veins and premium appearance",
     features: ["Sophisticated light color", "Flowing vein patterns", "Premium stone appearance", "Consistent quality", "Elegant finish"],
@@ -815,7 +812,7 @@ const Products = () => {
     description: "Pure white marble-like quartzite with subtle veining and classic beauty",
     features: ["Pure white color", "Marble-like appearance", "Subtle natural veining", "Classic elegance", "Premium grade quality"],
     uses: "Luxury bathrooms, classic kitchens, high-end commercial, traditional designs",
-    sizes: "Large format slabs, bookmatched pairs available", 
+    sizes: "Large format slabs, bookmatched pairs available",
     image: quartziteBK042
   }, {
     name: "Quartzite BK046 (1-3)",
@@ -835,31 +832,22 @@ const Products = () => {
     image: quartziteBK046_1
   }, {
     name: "Quartzite BK046-2",
-    category: "ABV Quartzite Collection - BK Series", 
+    category: "ABV Quartzite Collection - BK Series",
     description: "Premium grey quartzite with flowing patterns and natural stone elegance",
     features: ["Premium grey color", "Flowing natural patterns", "Stone elegance", "Superior durability", "Luxury appearance"],
     uses: "High-end residential, luxury commercial, feature walls, premium countertops",
     sizes: "Select premium slabs, custom fabrication services",
     image: quartziteBK046_2
   }];
-  
+
   // Get unique categories
   const categories = ["all", ...Array.from(new Set(boardTypes.map(board => board.category)))];
-  
   const filteredBoardTypes = boardTypes.filter(board => {
-    const matchesSearch = 
-      board.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      board.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      board.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      board.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+    const matchesSearch = board.name.toLowerCase().includes(searchTerm.toLowerCase()) || board.category.toLowerCase().includes(searchTerm.toLowerCase()) || board.description.toLowerCase().includes(searchTerm.toLowerCase()) || board.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesCategory = selectedCategory === "all" || board.category === selectedCategory;
-    
     return matchesSearch && matchesCategory;
   });
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
@@ -882,39 +870,25 @@ const Products = () => {
         <div className="container mx-auto px-4">
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
             <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2 bg-transparent">
-              {categories.map((category) => (
-                <TabsTrigger 
-                  key={category} 
-                  value={category}
-                  className="capitalize"
-                >
+              {categories.map(category => <TabsTrigger key={category} value={category} className="capitalize">
                   {category === "all" ? "All Products" : category}
-                </TabsTrigger>
-              ))}
+                </TabsTrigger>)}
             </TabsList>
           </Tabs>
           
           {/* Search Bar */}
           <div className="max-w-md mx-auto mt-6">
             <div className="flex gap-2">
-              <Input
-                type="text"
-                placeholder="Search products, categories, or features..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="flex-1"
-              />
+              <Input type="text" placeholder="Search products, categories, or features..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="flex-1" />
               <Button variant="outline" size="icon">
                 <Search className="h-4 w-4" />
               </Button>
             </div>
-            {(searchTerm || selectedCategory !== "all") && (
-              <p className="text-sm text-muted-foreground mt-2 text-center">
+            {(searchTerm || selectedCategory !== "all") && <p className="text-sm text-muted-foreground mt-2 text-center">
                 Found {filteredBoardTypes.length} product{filteredBoardTypes.length !== 1 ? 's' : ''}
                 {searchTerm && ` matching "${searchTerm}"`}
                 {selectedCategory !== "all" && ` in ${selectedCategory}`}
-              </p>
-            )}
+              </p>}
           </div>
         </div>
       </section>
@@ -922,26 +896,15 @@ const Products = () => {
       {/* Products Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {selectedCategory === "all" && !searchTerm ? (
-            <div className="text-center py-12">
-              <Info className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+          {selectedCategory === "all" && !searchTerm ? <div className="text-center py-12">
+              
               <h3 className="text-lg font-semibold text-muted-foreground mb-2">Select a category to view products</h3>
               <p className="text-muted-foreground">Choose a product category from the tabs above to browse our collection.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredBoardTypes.length > 0 ? (
-              filteredBoardTypes.map((board, index) => <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+            </div> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredBoardTypes.length > 0 ? filteredBoardTypes.map((board, index) => <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {/* Product Image */}
                 <div className="h-48 overflow-hidden">
-                  <OptimizedImage
-                    src={board.image}
-                    alt={`${board.name} - ${board.category} board from ABV Boards Zimbabwe`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    width={400}
-                    height={192}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                  <OptimizedImage src={board.image} alt={`${board.name} - ${board.category} board from ABV Boards Zimbabwe`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width={400} height={192} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 </div>
                 
                 <CardHeader>
@@ -960,12 +923,10 @@ const Products = () => {
                   {/* Key Features */}
                   <div>
                     <ul className="space-y-1">
-                      {board.features.slice(0, 3).map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm">
+                      {board.features.slice(0, 3).map((feature, idx) => <li key={idx} className="flex items-start gap-2 text-sm">
                           <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                           <span>{feature}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
 
@@ -1003,12 +964,10 @@ const Products = () => {
                           <div>
                             <h3 className="text-lg font-semibold mb-3">Key Features</h3>
                             <ul className="space-y-2">
-                              {board.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-sm">
+                              {board.features.map((feature, idx) => <li key={idx} className="flex items-start gap-2 text-sm">
                                   <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                                   <span>{feature}</span>
-                                </li>
-                              ))}
+                                </li>)}
                             </ul>
                           </div>
                           
@@ -1022,45 +981,27 @@ const Products = () => {
                         <div>
                           <h3 className="text-lg font-semibold mb-3">Finished Product Examples</h3>
                           <div className="grid grid-cols-1 gap-4">
-                            {finishedExamples[getProductCategory(board.name)].map((image, idx) => (
-                              <div key={idx} className="overflow-hidden rounded-lg">
-                                <OptimizedImage
-                                  src={image}
-                                  alt={`${board.name} finished product example ${idx + 1} - completed project using ${board.category}`}
-                                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
-                                  width={400}
-                                  height={160}
-                                  sizes="(max-width: 768px) 100vw, 50vw"
-                                />
-                              </div>
-                            ))}
+                            {finishedExamples[getProductCategory(board.name)].map((image, idx) => <div key={idx} className="overflow-hidden rounded-lg">
+                                <OptimizedImage src={image} alt={`${board.name} finished product example ${idx + 1} - completed project using ${board.category}`} className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300" width={400} height={160} sizes="(max-width: 768px) 100vw, 50vw" />
+                              </div>)}
                           </div>
                         </div>
                       </div>
                     </DialogContent>
                   </Dialog>
                 </CardContent>
-                 </Card>
-              )
-            ) : (
-              <div className="col-span-full text-center py-12">
+                 </Card>) : <div className="col-span-full text-center py-12">
                 <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-muted-foreground mb-2">No products found</h3>
                 <p className="text-muted-foreground">Try searching with different keywords or browse all products.</p>
-                <Button 
-                  variant="outline" 
-                  className="mt-4"
-                  onClick={() => {
-                    setSearchTerm("");
-                    setSelectedCategory("all");
-                  }}
-                >
+                <Button variant="outline" className="mt-4" onClick={() => {
+              setSearchTerm("");
+              setSelectedCategory("all");
+            }}>
                   Clear Filters
                 </Button>
-              </div>
-            )}
-            </div>
-          )}
+              </div>}
+            </div>}
         </div>
       </section>
 
@@ -1086,8 +1027,6 @@ const Products = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Products;
