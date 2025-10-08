@@ -54,11 +54,11 @@ const PromotionalPopup = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-4xl p-0 gap-0 bg-background/95 backdrop-blur-sm">
+      <DialogContent className="max-w-md p-0 gap-0 bg-background/95 backdrop-blur-sm">
         <Button
           variant="ghost"
           size="icon"
-          className="absolute right-4 top-4 z-50 rounded-full bg-background/80 hover:bg-background"
+          className="absolute right-2 top-2 z-50 rounded-full bg-background/80 hover:bg-background"
           onClick={() => setOpen(false)}
         >
           <X className="h-4 w-4" />
@@ -68,7 +68,7 @@ const PromotionalPopup = () => {
           <img
             src={promotionalFliers[currentIndex].image}
             alt={promotionalFliers[currentIndex].alt}
-            className="w-full h-auto max-h-[80vh] object-contain"
+            className="w-full h-auto max-h-[50vh] object-contain"
           />
 
           {promotionalFliers.length > 1 && (
@@ -76,22 +76,22 @@ const PromotionalPopup = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-background/90 hover:bg-background"
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-background/90 hover:bg-background h-8 w-8"
                 onClick={handlePrevious}
               >
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-3 w-3" />
               </Button>
 
               <Button
                 variant="outline"
                 size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-background/90 hover:bg-background"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-background/90 hover:bg-background h-8 w-8"
                 onClick={handleNext}
               >
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-3 w-3" />
               </Button>
 
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
                 {promotionalFliers.map((_, index) => (
                   <button
                     key={index}
