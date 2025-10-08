@@ -922,8 +922,15 @@ const Products = () => {
       {/* Products Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredBoardTypes.length > 0 ? (
+          {selectedCategory === "all" && !searchTerm ? (
+            <div className="text-center py-12">
+              <Info className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-muted-foreground mb-2">Select a category to view products</h3>
+              <p className="text-muted-foreground">Choose a product category from the tabs above to browse our collection.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredBoardTypes.length > 0 ? (
               filteredBoardTypes.map((board, index) => <Card key={board.name} className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {/* Product Image */}
                 <div className="h-48 overflow-hidden">
@@ -1052,7 +1059,8 @@ const Products = () => {
                 </Button>
               </div>
             )}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
