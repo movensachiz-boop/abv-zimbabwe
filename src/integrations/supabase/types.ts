@@ -44,6 +44,63 @@ export type Database = {
         }
         Relationships: []
       }
+      posts: {
+        Row: {
+          category: string
+          contact_email: string | null
+          contact_phone: string
+          created_at: string | null
+          date_lost_found: string
+          description: string
+          id: string
+          image_url: string | null
+          location: string
+          owner_name: string
+          reward_amount: number | null
+          status: Database["public"]["Enums"]["post_status"]
+          title: string
+          type: Database["public"]["Enums"]["post_type"]
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          category: string
+          contact_email?: string | null
+          contact_phone: string
+          created_at?: string | null
+          date_lost_found: string
+          description: string
+          id?: string
+          image_url?: string | null
+          location: string
+          owner_name: string
+          reward_amount?: number | null
+          status?: Database["public"]["Enums"]["post_status"]
+          title: string
+          type: Database["public"]["Enums"]["post_type"]
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          category?: string
+          contact_email?: string | null
+          contact_phone?: string
+          created_at?: string | null
+          date_lost_found?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          location?: string
+          owner_name?: string
+          reward_amount?: number | null
+          status?: Database["public"]["Enums"]["post_status"]
+          title?: string
+          type?: Database["public"]["Enums"]["post_type"]
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       products: {
         Row: {
           category: string
@@ -80,6 +137,39 @@ export type Database = {
           size?: string
           stock?: number
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          is_active: boolean
+          role: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          is_active?: boolean
+          role?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          is_active?: boolean
+          role?: string
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
@@ -208,14 +298,8 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      has_admin_role: {
-        Args: { required_role: Database["public"]["Enums"]["admin_role"] }
-        Returns: boolean
-      }
-      is_admin_user: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
+      has_admin_role: { Args: { required_role: string }; Returns: boolean }
+      is_admin_user: { Args: never; Returns: boolean }
       update_product_stock: {
         Args: { product_id: string; quantity_sold: number }
         Returns: undefined
@@ -223,6 +307,8 @@ export type Database = {
     }
     Enums: {
       admin_role: "owner" | "manager" | "cashier" | "viewer"
+      post_status: "active" | "resolved" | "expired"
+      post_type: "lost" | "found"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -351,6 +437,8 @@ export const Constants = {
   public: {
     Enums: {
       admin_role: ["owner", "manager", "cashier", "viewer"],
+      post_status: ["active", "resolved", "expired"],
+      post_type: ["lost", "found"],
     },
   },
 } as const
