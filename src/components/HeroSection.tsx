@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone, FileText } from "lucide-react";
+import { MessageCircle, Phone, MapPin } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
@@ -122,10 +122,10 @@ const HeroSection = () => {
                   Call Now
                 </Button>
               </a>
-              <a href="https://wa.me/263718456811?text=Hi%20ABV%20Boards%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20my%20project." target="_blank" rel="noopener noreferrer">
+              <a href="https://maps.app.goo.gl/Bt29GnvzrZyhw9zj8" target="_blank" rel="noopener noreferrer">
                 <Button variant="charcoal" size="lg" className="gap-2 px-8 hover-scale transition-all duration-300 hover:shadow-2xl">
-                  <FileText className="w-5 h-5" />
-                  Request Quote
+                  <MapPin className="w-5 h-5" />
+                  Location
                 </Button>
               </a>
             </div>
