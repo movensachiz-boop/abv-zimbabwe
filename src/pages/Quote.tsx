@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, MessageCircle, Mail, FileText } from "lucide-react";
+import { Phone, MessageCircle, Mail, FileText, MapPin } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 interface QuoteFormData {
@@ -144,6 +144,16 @@ Please provide a quote for the above requirements. Thank you!`;
                       <p className="text-muted-foreground">artipelbusinessventures@gmail.com</p>
                     </div>
                   </div>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">Visit Us</h3>
+                      <p className="text-muted-foreground">ABV Boards, Gweru</p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="pt-8">
@@ -159,6 +169,12 @@ Please provide a quote for the above requirements. Thank you!`;
                       <Button variant="whatsapp" className="w-full gap-2 justify-start">
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp Us
+                      </Button>
+                    </a>
+                    <a href="https://maps.app.goo.gl/Bt29GnvzrZyhw9zj8" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" className="w-full gap-2 justify-start border-red-500 text-red-600 hover:bg-red-500 hover:text-white">
+                        <MapPin className="w-4 h-4" />
+                        Get Directions
                       </Button>
                     </a>
                   </div>
